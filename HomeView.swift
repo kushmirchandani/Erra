@@ -28,14 +28,14 @@ struct HomeView: View {
                     NavigationLink(destination: SettingsView()) {
                         DashboardItem(imageName: "book.fill", title: "Practice")
                     }
-                    NavigationLink(destination: SettingsView()) {
-                        DashboardItem(imageName: "clock.fill", title: "Timer")
+                    NavigationLink(destination: ErrorLogView()) {
+                        DashboardItem(imageName: "clock.fill", title: "Error Log")
                     }
                 }
                 .padding(.horizontal, 20)
                 
                 HStack(spacing: 20) {
-                    NavigationLink(destination: SettingsView()) {
+                    NavigationLink(destination: TipsView()) {
                         DashboardItem(imageName: "lightbulb.fill", title: "Exam Tips")
                     }
                     NavigationLink(destination: SettingsView()) {
