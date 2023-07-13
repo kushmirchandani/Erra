@@ -27,7 +27,7 @@ struct LoginView: View {
                                 .font(.title)
                                 .fontWeight(.bold)
                             Text("Test Prep Simplified")
-                            
+                           
                             VStack {
                                 TextField("Enter Your Email", text: $viewModel.email)
                                     .padding()
@@ -37,7 +37,7 @@ struct LoginView: View {
                                             Rectangle().frame(height: 1).foregroundColor(.gray)
                                         }
                                     )
-                                
+                                                        
                                 SecureField("Enter Your Password", text: $viewModel.password)
                                     .padding()
                                     .background(
@@ -48,7 +48,6 @@ struct LoginView: View {
                                         }
                                     )
                             }
-
                             
                             Button(action: {
                                 viewModel.signIn()

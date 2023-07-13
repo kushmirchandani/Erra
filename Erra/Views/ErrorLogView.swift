@@ -104,7 +104,7 @@ struct ErrorLogCard: View {
     let errorLog: ErrorLog
     
     var body: some View {
-        VStack(alignment: .leading, spacing: 10) {
+        VStack(alignment: .leading, spacing: 10) { // Set alignment to .leading
             HStack {
                 Text("Section:")
                     .font(.caption)
@@ -133,12 +133,15 @@ struct ErrorLogCard: View {
                 .font(.title2)
                 .fontWeight(.bold)
         }
-        .padding()
+        .padding(.horizontal, -165)
+        .padding(.vertical, 20)// Add negative horizontal padding
+        .frame(maxWidth: .infinity)
         .background(Color.white)
         .cornerRadius(10)
         .shadow(color: Color.black.opacity(0.1), radius: 5, x: 0, y: 2)
     }
 }
+
 
 struct ErrorLogView_Previews: PreviewProvider {
     static var previews: some View {
