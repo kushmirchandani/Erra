@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import Firebase
 import FirebaseCore
 
 
@@ -21,11 +22,13 @@ class AppDelegate: NSObject, UIApplicationDelegate {
 @main
 struct ErraApp: App {
     let persistenceController = PersistenceController.shared
+   
     @UIApplicationDelegateAdaptor(AppDelegate.self) var delegate
+    
     var body: some Scene {
         WindowGroup {
-            ContentView()
-                .environment(\.managedObjectContext, persistenceController.container.viewContext)
+            LoginView()
+                
         }
     }
 }

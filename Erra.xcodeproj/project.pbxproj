@@ -31,6 +31,7 @@
 		6D0EA0172A5AD00D00933D09 /* GoogleSignIn in Frameworks */ = {isa = PBXBuildFile; productRef = 6D0EA0162A5AD00D00933D09 /* GoogleSignIn */; };
 		6D0EA0192A5AD00D00933D09 /* GoogleSignInSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 6D0EA0182A5AD00D00933D09 /* GoogleSignInSwift */; };
 		6D0EA01B2A5B1EE000933D09 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D0EA01A2A5B1EE000933D09 /* SettingsView.swift */; };
+		8F27B7DA2A6041A7007C149B /* AuthenticantionManager .swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F27B7D92A6041A7007C149B /* AuthenticantionManager .swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -64,11 +65,12 @@
 		6D0C6F712A58810E004846AA /* ErraUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErraUITests.swift; sourceTree = "<group>"; };
 		6D0C6F732A58810E004846AA /* ErraUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErraUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		6D0C6F842A59B401004846AA /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = SOURCE_ROOT; };
-		6D0C6F862A59CD8D004846AA /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = SOURCE_ROOT; };
+		6D0C6F862A59CD8D004846AA /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = LoginView.swift; path = Erra/Auth/LoginView.swift; sourceTree = SOURCE_ROOT; };
 		6D0C6F8A2A5AC3A7004846AA /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		6D0EA0142A5AC85500933D09 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		6D0EA01A2A5B1EE000933D09 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		6D0EA01C2A5B2F7700933D09 /* Erra.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Erra.entitlements; sourceTree = "<group>"; };
+		8F27B7D92A6041A7007C149B /* AuthenticantionManager .swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AuthenticantionManager .swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -132,7 +134,7 @@
 				6D0EA0142A5AC85500933D09 /* Info.plist */,
 				6D0C6F8A2A5AC3A7004846AA /* GoogleService-Info.plist */,
 				6D0C6F512A58810D004846AA /* ErraApp.swift */,
-				6D0C6F832A59B3BA004846AA /* Navigation */,
+				8F27B7D82A603383007C149B /* Auth */,
 				6D0C6F822A59B3A4004846AA /* Views */,
 				6D0C6F552A58810E004846AA /* Assets.xcassets */,
 				6D0C6F5A2A58810E004846AA /* Persistence.swift */,
@@ -170,7 +172,6 @@
 		6D0C6F822A59B3A4004846AA /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				6D0C6F862A59CD8D004846AA /* LoginView.swift */,
 				6D0C6F842A59B401004846AA /* HomeView.swift */,
 				6D0C6F532A58810D004846AA /* ContentView.swift */,
 				6D0EA01A2A5B1EE000933D09 /* SettingsView.swift */,
@@ -178,11 +179,13 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
-		6D0C6F832A59B3BA004846AA /* Navigation */ = {
+		8F27B7D82A603383007C149B /* Auth */ = {
 			isa = PBXGroup;
 			children = (
+				6D0C6F862A59CD8D004846AA /* LoginView.swift */,
+				8F27B7D92A6041A7007C149B /* AuthenticantionManager .swift */,
 			);
-			path = Navigation;
+			path = Auth;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -334,6 +337,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				6D0EA01B2A5B1EE000933D09 /* SettingsView.swift in Sources */,
+				8F27B7DA2A6041A7007C149B /* AuthenticantionManager .swift in Sources */,
 				6D0C6F872A59CD8D004846AA /* LoginView.swift in Sources */,
 				6D0C6F5B2A58810E004846AA /* Persistence.swift in Sources */,
 				6D0C6F542A58810D004846AA /* ContentView.swift in Sources */,

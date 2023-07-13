@@ -6,15 +6,36 @@
 //
 
 import SwiftUI
-
+@MainActor
+final class LoginViewModel : ObservableObject{
+    
+    @Published var email = ""
+    @Published var password = ""
+    
+    func signIn() {
+        guard !email.isEmpty, !password.isEmpty else{
+            print("No email or password found.")
+            return
+        }
+        Task{
+            do{
+                let returnedUserData: () = try await AuthenticationManager.shared.createUser(email: email, password: password)
+                print("Success")
+                print(returnedUserData)
+            }catch{
+                print("Error: \(error)")
+                
+            }
+        }
+    }
+}
 struct LoginView: View {
+    @StateObject private var viewModel = LoginViewModel()
     var body: some View {
+        
+        
         ZStack {
-            // Page background image
-            Image("Google Logo Black")
-                .resizable()
-                .aspectRatio(contentMode: .fill)
-                .edgesIgnoringSafeArea(.all)
+            
             
             Color.white.opacity(1) // Lower opacity of the grey background
             
@@ -26,13 +47,17 @@ struct LoginView: View {
                     .frame(maxWidth: .infinity)
                     .padding(.horizontal)
                     .overlay(
+                        
+                
                         VStack {
                             Text("Welcome to Erra")
                                 .font(.title)
                                 .fontWeight(.bold)
                             Text("Test Prep Simplified")
                             
-                            HStack(spacing: 20) {
+                           
+                            //apple button
+                            VStack(spacing: 20) {
                                 Button(action: {}) {
                                     HStack {
                                         Image(systemName: "applelogo")
@@ -47,7 +72,7 @@ struct LoginView: View {
                                     .background(Color.black)
                                     .cornerRadius(10)
                                 }
-                                
+                                //google button
                                 Button(action: {}) {
                                     HStack {
                                         Image("Google Icon White")
@@ -62,6 +87,37 @@ struct LoginView: View {
                                     .background(Color.black)
                                     .cornerRadius(10)
                                 }
+                                
+                                Text("or")
+                                    .padding(10)
+                                
+                                //Sign in with email
+                                VStack{
+                                    TextField("Email...", text: $viewModel.email)
+                                        .background(Color.white.opacity(0.4))
+                                        .cornerRadius(10)
+                                        .padding()
+                                    
+                                    SecureField("Password...", text: $viewModel.password)
+                                        .background(Color.white.opacity(0.4))
+                                        .cornerRadius(10)
+                                        .padding()
+                                }
+                                Button {
+                                    viewModel.signIn()
+                                } label: {
+                                Text("Sign in")
+                                        .font(.headline)
+                                        .foregroundColor(.white)
+                                        .frame(height:55)
+                                        .frame(maxWidth: .infinity)
+                                        .background(Color.black)
+                                        .cornerRadius(10)
+                                    
+                                    
+                                }
+
+                        
                             }
                         }
                         .padding(.top, 20)
@@ -71,13 +127,18 @@ struct LoginView: View {
             }
             .edgesIgnoringSafeArea(.all)
         }
+        .padding()
+       
     }
 }
 
 
 struct LoginView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+        NavigationStack{
+            LoginView()
+        }
+        
     }
 }
 
