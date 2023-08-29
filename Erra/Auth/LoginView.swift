@@ -60,42 +60,42 @@ struct LoginView: View {
                                     .background(Color.black)
                                     .cornerRadius(10)
                             }
-                            
-                            Text("or")
-                                .padding(10)
+//                            
+//                            Text("or")
+//                                .padding(10)
                             
                             VStack(spacing: 20) {
-                                Button(action: {}) {
-                                    HStack {
-                                        Image(systemName: "applelogo")
-                                            .resizable()
-                                            .frame(width: 20, height: 25)
-                                        Text("Apple Sign In")
-                                            .padding(5)
-                                    }
-                                    .foregroundColor(.white)
-                                    .font(.headline)
-                                    .padding(10)
-                                    .frame(maxWidth: .infinity) // <-- Added modifier
-                                    .background(Color.black)
-                                    .cornerRadius(10)
-                                }
+//                                Button(action: {}) {
+//                                    HStack {
+//                                        Image(systemName: "applelogo")
+//                                            .resizable()
+//                                            .frame(width: 20, height: 25)
+//                                        Text("Apple Sign In")
+//                                            .padding(5)
+//                                    }
+//                                    .foregroundColor(.white)
+//                                    .font(.headline)
+//                                    .padding(10)
+//                                    .frame(maxWidth: .infinity) // <-- Added modifier
+//                                    .background(Color.black)
+//                                    .cornerRadius(10)
+//                                }
                                 
-                                Button(action: {}) {
-                                    HStack {
-                                        Image("Google Icon White")
-                                            .resizable()
-                                            .frame(width: 20, height: 20)
-                                        Text("Google Sign In")
-                                            .padding(5)
-                                    }
-                                    .foregroundColor(.white)
-                                    .font(.headline)
-                                    .padding(10)
-                                    .frame(maxWidth: .infinity) // <-- Added modifier
-                                    .background(Color.black)
-                                    .cornerRadius(10)
-                                }
+//                                Button(action: {}) {
+//                                    HStack {
+//                                        Image("Google Icon White")
+//                                            .resizable()
+//                                            .frame(width: 20, height: 20)
+//                                        Text("Google Sign In")
+//                                            .padding(5)
+//                                    }
+//                                    .foregroundColor(.white)
+//                                    .font(.headline)
+//                                    .padding(10)
+//                                    .frame(maxWidth: .infinity) // <-- Added modifier
+//                                    .background(Color.black)
+//                                    .cornerRadius(10)
+//                                }
                             }
                         }
                         .padding(.top, 20)
