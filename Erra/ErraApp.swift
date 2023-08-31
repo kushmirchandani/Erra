@@ -26,7 +26,7 @@ struct ErraApp: App {
     
     var body: some Scene {
         WindowGroup {
-            LoginView()
+            Onboarding1()
                 
         }
     }
