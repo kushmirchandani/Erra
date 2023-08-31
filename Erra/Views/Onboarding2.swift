@@ -48,8 +48,9 @@ struct Onboarding2: View {
             
                 //LOGIN LOGIN LOGIN //
                 //pls help me position this right
-                
+            
                 VStack {
+                  
                     TextField("Enter Your Email", text: $viewModel1.email)
                         .padding()
                         .background(
@@ -80,7 +81,8 @@ struct Onboarding2: View {
                             .cornerRadius(10)
                     }
                 }
-                
+                .padding(.top, 350)
+                .frame(width: UIScreen.main.bounds.width * 0.9)
                
                 
                 
@@ -88,10 +90,21 @@ struct Onboarding2: View {
                 //bottom stuff
                     
                     HStack (spacing: 130){
-                        Rectangle()
-                            .frame(width: 150, height: 15)
-                            .foregroundColor(.gray)
+                        ZStack(alignment: .leading){
+                                           
+                            Rectangle()
+                        .frame(width: 150, height: 15)
+                                .foregroundColor(.gray)
+                                .cornerRadius(7)
+                            
+                            
+                            Rectangle()
+                            .frame(width:50, height: 15)
+                            .foregroundColor(.black)
                             .cornerRadius(7)
+                                               
+                                       }
+                        
                         
                         
                         Image("Arrow")
@@ -102,13 +115,7 @@ struct Onboarding2: View {
                     }
                     .position(x: geometry.size.width / 2, y: geometry.size.height)
                 
-                ZStack{
-                                   Rectangle()
-                                       .frame(width:50, height: 15)
-                                       .foregroundColor(.black)
-                                       .cornerRadius(7)
-                                       .position(x: geometry.size.width - 355, y: geometry.size.height)
-                               }
+               
                 
             }
             .edgesIgnoringSafeArea(.all)
