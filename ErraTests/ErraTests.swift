@@ -7,6 +7,9 @@
 
 import XCTest
 @testable import Erra
+import Firebase
+import FirebaseAuth
+import FirebaseCore
 
 final class ErraTests: XCTestCase {
 

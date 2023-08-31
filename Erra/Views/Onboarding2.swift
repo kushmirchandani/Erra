@@ -59,6 +59,15 @@ struct Onboarding2: View {
                                 Rectangle().frame(height: 1).foregroundColor(.gray)
                             }
                         )
+                    
+                    TextField("Enter Your Name", text: $viewModel1.name)
+                        .padding()
+                        .background(
+                            VStack {
+                                Color.white.opacity(0.4)
+                                Rectangle().frame(height: 1).foregroundColor(.gray)
+                            }
+                        )
                                             
                     SecureField("Enter Your Password", text: $viewModel1.password)
                         .padding()
@@ -82,7 +91,7 @@ struct Onboarding2: View {
                     }
                 }
                 .padding(.top, 350)
-                .frame(width: UIScreen.main.bounds.width * 0.9)
+                .frame(width: UIScreen.main.bounds.width * 0.8)
                
                 
                 
@@ -133,15 +142,15 @@ final class Login1ViewModel : ObservableObject{
     
     @Published var email = ""
     @Published var password = ""
-    
+    @Published var name = ""
     func signIn() {
-        guard !email.isEmpty, !password.isEmpty else{
+        guard !email.isEmpty, !password.isEmpty, !name.isEmpty else{
             print("No email or password found.")
             return
         }
         Task{
             do{
-                let returnedUserData: () = try await AuthenticationManager.shared.createUser(email: email, password: password)
+                let returnedUserData: () = try await AuthenticationManager.shared.createUser(email: email, password: password, name: name)
                 print("Success")
                 print(returnedUserData)
             }catch{
