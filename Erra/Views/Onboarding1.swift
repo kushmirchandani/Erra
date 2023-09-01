@@ -44,11 +44,18 @@ struct Onboarding1: View {
                 
                     
                     HStack (spacing: 130){
-                        Rectangle()
-                            .frame(width: 150, height: 15)
-                            .foregroundColor(.gray)
-                            .cornerRadius(7)
-                        
+                        ZStack(alignment: .leading){
+                            Rectangle()
+                                .frame(width: 150, height: 15)
+                                .foregroundColor(.gray)
+                                .cornerRadius(7)
+                            
+                            Rectangle()
+                                .frame(width:25, height: 15)
+                                .foregroundColor(.black)
+                                .cornerRadius(7)
+                            
+                        }
                         Button(action: {
                             isOnboarding2Presented = true
                         }) {
@@ -64,13 +71,9 @@ struct Onboarding1: View {
                     }
                     .position(x: geometry.size.width / 2, y: geometry.size.height)
                 
-                ZStack{
-                    Rectangle()
-                        .frame(width:50, height: 15)
-                        .foregroundColor(.black)
-                        .cornerRadius(7)
-                        .position(x: geometry.size.width - 355, y: geometry.size.height)
-                }
+                
+                    
+                
                 
             }
             .edgesIgnoringSafeArea(.all)
