@@ -34,6 +34,7 @@
 		6D0EA0242A60645500933D09 /* TipsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D0EA0232A60645500933D09 /* TipsView.swift */; };
 		6D0EA0262A6064A200933D09 /* ErrorLogView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D0EA0252A6064A200933D09 /* ErrorLogView.swift */; };
 		8F27B7DA2A6041A7007C149B /* AuthenticantionManager .swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F27B7D92A6041A7007C149B /* AuthenticantionManager .swift */; };
+		8F54A96C2AA211CB0071A96B /* Onboarding3.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F54A96B2AA211CB0071A96B /* Onboarding3.swift */; };
 		8FB9A6562AA0057E004A610D /* Onboarding1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FB9A6552AA0057E004A610D /* Onboarding1.swift */; };
 		8FB9A6682AA00FD7004A610D /* Inter-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8FB9A6612AA00F5D004A610D /* Inter-Regular.ttf */; };
 		8FB9A6692AA011AF004A610D /* Inter-Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8FB9A65F2AA00F5D004A610D /* Inter-Thin.ttf */; };
@@ -79,6 +80,7 @@
 		6D0EA0232A60645500933D09 /* TipsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TipsView.swift; sourceTree = "<group>"; };
 		6D0EA0252A6064A200933D09 /* ErrorLogView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorLogView.swift; sourceTree = "<group>"; };
 		8F27B7D92A6041A7007C149B /* AuthenticantionManager .swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AuthenticantionManager .swift"; sourceTree = "<group>"; };
+		8F54A96B2AA211CB0071A96B /* Onboarding3.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Onboarding3.swift; sourceTree = "<group>"; };
 		8FB9A6552AA0057E004A610D /* Onboarding1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Onboarding1.swift; sourceTree = "<group>"; };
 		8FB9A65B2AA00F5D004A610D /* Inter-VariableFont_slnt,wght.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Inter-VariableFont_slnt,wght.ttf"; sourceTree = "<group>"; };
 		8FB9A65D2AA00F5D004A610D /* Inter-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Inter-Medium.ttf"; sourceTree = "<group>"; };
@@ -202,6 +204,7 @@
 				6D0EA01A2A5B1EE000933D09 /* SettingsView.swift */,
 				8FB9A6552AA0057E004A610D /* Onboarding1.swift */,
 				8FB9A66A2AA02649004A610D /* Onboarding2.swift */,
+				8F54A96B2AA211CB0071A96B /* Onboarding3.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -396,6 +399,7 @@
 				8FB9A6562AA0057E004A610D /* Onboarding1.swift in Sources */,
 				8F27B7DA2A6041A7007C149B /* AuthenticantionManager .swift in Sources */,
 				6D0C6F872A59CD8D004846AA /* LoginView.swift in Sources */,
+				8F54A96C2AA211CB0071A96B /* Onboarding3.swift in Sources */,
 				6D0C6F5B2A58810E004846AA /* Persistence.swift in Sources */,
 				6D0C6F542A58810D004846AA /* ContentView.swift in Sources */,
 				6D0C6F522A58810D004846AA /* ErraApp.swift in Sources */,
