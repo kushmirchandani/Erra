@@ -8,6 +8,7 @@
 
 //hiii
 import SwiftUI
+import FirebaseAuth
 
 struct Onboarding1: View {
     @State private var isOnboarding2Presented = false
@@ -72,7 +73,7 @@ struct Onboarding1: View {
                         
                     }
                     .position(x: geometry.size.width / 2, y: geometry.size.height)
-                
+                   
                 
                     
                 
