@@ -12,7 +12,6 @@
 		6D0C6F562A58810E004846AA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6D0C6F552A58810E004846AA /* Assets.xcassets */; };
 		6D0C6F592A58810E004846AA /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6D0C6F582A58810E004846AA /* Preview Assets.xcassets */; };
 		6D0C6F5B2A58810E004846AA /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D0C6F5A2A58810E004846AA /* Persistence.swift */; };
-		6D0C6F5E2A58810E004846AA /* Erra.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 6D0C6F5C2A58810E004846AA /* Erra.xcdatamodeld */; };
 		6D0C6F682A58810E004846AA /* ErraTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D0C6F672A58810E004846AA /* ErraTests.swift */; };
 		6D0C6F722A58810E004846AA /* ErraUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D0C6F712A58810E004846AA /* ErraUITests.swift */; };
 		6D0C6F742A58810E004846AA /* ErraUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D0C6F732A58810E004846AA /* ErraUITestsLaunchTests.swift */; };
@@ -37,6 +36,8 @@
 		8F6AC9262AA3835600F90966 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F6AC9252AA3835600F90966 /* DataManager.swift */; };
 		8F6AC9282AA3839400F90966 /* UserIDs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F6AC9272AA3839400F90966 /* UserIDs.swift */; };
 		8F6AC92C2AA38D4C00F90966 /* TipsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F6AC92B2AA38D4C00F90966 /* TipsView.swift */; };
+		8F6AC9312AA6826900F90966 /* Ignis.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 8F6AC92F2AA6826900F90966 /* Ignis.xcdatamodeld */; };
+		8F6AC9332AA6954C00F90966 /* Login.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F6AC9322AA6954C00F90966 /* Login.swift */; };
 		8FB9A6562AA0057E004A610D /* Onboarding1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FB9A6552AA0057E004A610D /* Onboarding1.swift */; };
 		8FB9A6682AA00FD7004A610D /* Inter-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8FB9A6612AA00F5D004A610D /* Inter-Regular.ttf */; };
 		8FB9A6692AA011AF004A610D /* Inter-Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8FB9A65F2AA00F5D004A610D /* Inter-Thin.ttf */; };
@@ -67,7 +68,6 @@
 		6D0C6F552A58810E004846AA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		6D0C6F582A58810E004846AA /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		6D0C6F5A2A58810E004846AA /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
-		6D0C6F5D2A58810E004846AA /* Erra.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Erra.xcdatamodel; sourceTree = "<group>"; };
 		6D0C6F632A58810E004846AA /* ErraTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ErraTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		6D0C6F672A58810E004846AA /* ErraTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErraTests.swift; sourceTree = "<group>"; };
 		6D0C6F6D2A58810E004846AA /* ErraUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ErraUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -85,6 +85,8 @@
 		8F6AC9252AA3835600F90966 /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
 		8F6AC9272AA3839400F90966 /* UserIDs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserIDs.swift; sourceTree = "<group>"; };
 		8F6AC92B2AA38D4C00F90966 /* TipsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TipsView.swift; sourceTree = "<group>"; };
+		8F6AC9302AA6826900F90966 /* Ignis.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Ignis.xcdatamodel; sourceTree = "<group>"; };
+		8F6AC9322AA6954C00F90966 /* Login.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Login.swift; sourceTree = "<group>"; };
 		8FB9A6552AA0057E004A610D /* Onboarding1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Onboarding1.swift; sourceTree = "<group>"; };
 		8FB9A65B2AA00F5D004A610D /* Inter-VariableFont_slnt,wght.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Inter-VariableFont_slnt,wght.ttf"; sourceTree = "<group>"; };
 		8FB9A65D2AA00F5D004A610D /* Inter-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Inter-Medium.ttf"; sourceTree = "<group>"; };
@@ -167,8 +169,8 @@
 				6D0C6F822A59B3A4004846AA /* Views */,
 				6D0C6F552A58810E004846AA /* Assets.xcassets */,
 				6D0C6F5A2A58810E004846AA /* Persistence.swift */,
-				6D0C6F5C2A58810E004846AA /* Erra.xcdatamodeld */,
 				6D0C6F572A58810E004846AA /* Preview Content */,
+				8F6AC92F2AA6826900F90966 /* Ignis.xcdatamodeld */,
 			);
 			path = Erra;
 			sourceTree = "<group>";
@@ -209,6 +211,7 @@
 				8FB9A6552AA0057E004A610D /* Onboarding1.swift */,
 				8FB9A66A2AA02649004A610D /* Onboarding2.swift */,
 				8F6AC92B2AA38D4C00F90966 /* TipsView.swift */,
+				8F6AC9322AA6954C00F90966 /* Login.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -405,6 +408,7 @@
 				6D0EA01B2A5B1EE000933D09 /* SettingsView.swift in Sources */,
 				8FB9A6562AA0057E004A610D /* Onboarding1.swift in Sources */,
 				8F6AC9282AA3839400F90966 /* UserIDs.swift in Sources */,
+				8F6AC9312AA6826900F90966 /* Ignis.xcdatamodeld in Sources */,
 				8F27B7DA2A6041A7007C149B /* AuthenticantionManager .swift in Sources */,
 				8F6AC9262AA3835600F90966 /* DataManager.swift in Sources */,
 				6D0C6F872A59CD8D004846AA /* LoginView.swift in Sources */,
@@ -415,7 +419,7 @@
 				6D0C6F852A59B401004846AA /* HomeView.swift in Sources */,
 				8FB9A66B2AA02649004A610D /* Onboarding2.swift in Sources */,
 				6D0EA0262A6064A200933D09 /* ErrorLogView.swift in Sources */,
-				6D0C6F5E2A58810E004846AA /* Erra.xcdatamodeld in Sources */,
+				8F6AC9332AA6954C00F90966 /* Login.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -809,13 +813,13 @@
 /* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
-		6D0C6F5C2A58810E004846AA /* Erra.xcdatamodeld */ = {
+		8F6AC92F2AA6826900F90966 /* Ignis.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
-				6D0C6F5D2A58810E004846AA /* Erra.xcdatamodel */,
+				8F6AC9302AA6826900F90966 /* Ignis.xcdatamodel */,
 			);
-			currentVersion = 6D0C6F5D2A58810E004846AA /* Erra.xcdatamodel */;
-			path = Erra.xcdatamodeld;
+			currentVersion = 8F6AC9302AA6826900F90966 /* Ignis.xcdatamodel */;
+			path = Ignis.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
 		};

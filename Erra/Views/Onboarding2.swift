@@ -6,12 +6,16 @@
 //
 import SwiftUI
 import FirebaseAuth
+import CoreData
 
 struct Onboarding2: View {
     @StateObject private var viewModel1 = Login1ViewModel()
     @State private var isHomeViewActive = false
     @State private var isPresentingHomeView = false
     @StateObject private var viewModel2 = NameViewModel()
+    let managedObjectContext = PersistenceController.shared.container.viewContext
+    @StateObject private var viewModel = Onboarding2ViewModel()
+    
  
     
     
@@ -93,6 +97,7 @@ struct Onboarding2: View {
                                         let uid = user.uid
                                         viewModel2.nameFunc(forUser: uid) { success in
                                             if success {
+                                                viewModel.CoreDataVM1.updateOnboardingStatus(forUser: uid)
                                                 isPresentingHomeView = true
                                             }
                                         }
@@ -202,3 +207,33 @@ final class NameViewModel: ObservableObject {
     }
 }
 
+final class CoreDataVM: ObservableObject {
+    private let managedObjectContext: NSManagedObjectContext
+
+    init(managedObjectContext: NSManagedObjectContext) {
+        self.managedObjectContext = managedObjectContext
+    }
+    
+    func updateOnboardingStatus(forUser uid: String) {
+        // Fetch and update the Onboarding entity
+        let fetchRequest: NSFetchRequest<Onboarding> = Onboarding.fetchRequest()
+        fetchRequest.predicate = NSPredicate(format: "uniqueIdentifier == %@", uid)
+
+        do {
+            let onboardingEntities = try managedObjectContext.fetch(fetchRequest)
+            if let onboardingEntity = onboardingEntities.first {
+                // Update the attribute
+                onboardingEntity.isOnboardingCompleted = true
+
+                // Save managed object context to persist change
+                try managedObjectContext.save()
+            }
+        } catch {
+            print("Error updating Onboarding entity: \(error)")
+        }
+    }
+}
+
+final class Onboarding2ViewModel : ObservableObject {
+@StateObject var CoreDataVM1 = CoreDataVM(managedObjectContext: PersistenceController.shared.container.viewContext)
+}
