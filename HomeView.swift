@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct HomeView: View {
+    @StateObject private var LogoutVM1 = LogoutVM()
+    
     var body: some View {
         VStack{
             Group{
@@ -35,7 +37,13 @@ struct HomeView: View {
                   )
             Text("Tools")
                 .font(.title)
-
+            
+            Button(action: {
+                LogoutVM1.signout()
+            }) {
+                Text("Sign Out")
+                    .foregroundColor(.red)
+            }
             
         }
     }
@@ -46,3 +54,11 @@ struct HomeView: View {
         }
     }
     
+final class LogoutVM: ObservableObject {
+   
+    func signout() {
+        AuthenticationManager.shared.logout()
+    }
+        }
+        
+        

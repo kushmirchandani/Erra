@@ -35,6 +35,13 @@ final class AuthenticationManager{
             throw error // Rethrow the error to the caller if needed
         }
     }
-
+    
+    func logout() {
+            do {
+                try Auth.auth().signOut()
+            } catch {
+                print(error)
+            }
+        }
 
 }
