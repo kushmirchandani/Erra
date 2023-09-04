@@ -5,6 +5,8 @@
 //  Created by Heidi Schultz on 8/30/23.
 //
 
+
+//hiii
 import SwiftUI
 
 struct Onboarding1: View {
@@ -65,7 +67,7 @@ struct Onboarding1: View {
                                 .frame(width: 75, height: 75)
                         }
                         .fullScreenCover(isPresented: $isOnboarding2Presented) {
-                            Onboarding2() 
+                            Onboarding2()
                         }
                         
                     }

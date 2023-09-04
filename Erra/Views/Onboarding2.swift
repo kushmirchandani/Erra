@@ -5,11 +5,16 @@
 //  Created by Heidi Schultz on 8/30/23.
 //
 import SwiftUI
+import FirebaseAuth
 
 struct Onboarding2: View {
     @StateObject private var viewModel1 = Login1ViewModel()
-    @State private var isOnboarding3Active = false
-    @State private var isPresentingOnboarding3 = false
+    @State private var isHomeViewActive = false
+    @State private var isPresentingHomeView = false
+    @StateObject private var viewModel2 = NameViewModel()
+ 
+    
+    
     
     var body: some View {
         GeometryReader { geometry in
@@ -42,7 +47,7 @@ struct Onboarding2: View {
                         .frame(width: UIScreen.main.bounds.width * 0.93)
                         .padding(.top, 60)
                     
-                    TextField("Enter Your Name", text: $viewModel1.name)
+                    TextField("Enter Your First name", text: $viewModel2.firstName)
                         .padding()
                         .background(
                             VStack {
@@ -50,8 +55,15 @@ struct Onboarding2: View {
                                 Rectangle().frame(height: 1).foregroundColor(.gray)
                             }
                         )
-                    
-                    
+                    TextField("Enter Your Last name", text: $viewModel2.lastName)
+                        .padding()
+                        .background(
+                            VStack {
+                                Color.white.opacity(0.4)
+                                Rectangle().frame(height: 1).foregroundColor(.gray)
+                            }
+                        )
+                
                     TextField("Enter Your Email", text: $viewModel1.email)
                         .padding()
                         .background(
@@ -70,14 +82,26 @@ struct Onboarding2: View {
                                 Rectangle().frame(height: 1).foregroundColor(.gray)
                             }
                         )
+                  
+                    
                     
                     Button(action: {
                         viewModel1.signIn() { success in
-                            if success {
-                                isPresentingOnboarding3 = true
+                                if success {
+                                    // Fetching user UID for the button
+                                    if let user = Auth.auth().currentUser {
+                                        let uid = user.uid
+                                        viewModel2.nameFunc(forUser: uid) { success in
+                                            if success {
+                                                isPresentingHomeView = true
+                                            }
+                                        }
+                                    } else {
+                                        print("No user authenticated")
+                                    }
+                                }
                             }
-                        }
-                    }) {
+                        }) {
                         Text("Sign up")
                             .font(.headline)
                             .foregroundColor(.white)
@@ -109,8 +133,8 @@ struct Onboarding2: View {
             }
             .edgesIgnoringSafeArea(.all)
             .background(Color.white)
-            .fullScreenCover(isPresented: $isPresentingOnboarding3) {
-                Onboarding3()
+            .fullScreenCover(isPresented: $isPresentingHomeView) {
+                HomeView()
             }
         }
         .navigationBarHidden(true)
@@ -148,3 +172,33 @@ final class Login1ViewModel: ObservableObject {
         }
     }
 }
+
+final class NameViewModel: ObservableObject {
+    @Published var firstName = ""
+    @Published var lastName = ""
+    @Published var user = ""
+   
+   
+    
+    func nameFunc(forUser uid: String, completion: @escaping (Bool) -> Void) {
+        guard !firstName.isEmpty, !lastName.isEmpty else {
+            print("Please fill out all required fields.")
+            completion(false)
+            return
+        }
+        
+        Task {
+            do {
+                let name1 = firstName + " " + lastName
+                try await DataManager.shared.addName(name: name1, id: uid)
+                
+                print("Success")
+                completion(true)
+            } catch {
+                print("Error: \(error)")
+                completion(false)
+            }
+        }
+    }
+}
+

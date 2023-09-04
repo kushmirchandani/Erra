@@ -23,12 +23,20 @@ final class AuthenticationManager{
     private init(){}
     
     func createUser(email: String, password: String, name: String) async throws {
-        let authDataResult = try await Auth.auth().createUser(withEmail: email, password: password)
-        let result = AuthDataResultModel(user: authDataResult.user)
-        
-        // Update user profile with the provided name
-        let changeRequest = authDataResult.user.createProfileChangeRequest()
-        changeRequest.displayName = name
-        try await changeRequest.commitChanges()
+        do {
+            let authDataResult = try await Auth.auth().createUser(withEmail: email, password: password)
+            let result = AuthDataResultModel(user: authDataResult.user)
+            
+            // Update user profile with the provided name
+            let changeRequest = authDataResult.user.createProfileChangeRequest()
+            changeRequest.displayName = name
+            try await changeRequest.commitChanges()
+            
+            print("User created successfully with UID: \(result.uid)")
+        } catch {
+            print("Error creating user: \(error.localizedDescription)")
+            throw error // Rethrow the error to the caller if needed
+        }
     }
+
 }
