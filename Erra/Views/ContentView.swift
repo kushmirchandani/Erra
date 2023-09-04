@@ -6,13 +6,25 @@
 //
 
 import SwiftUI
+import FirebaseAuth
+
+class AuthViewModel: ObservableObject {
+    @Published var userIsLoggedIn = false
+    
+    init() {
+        Auth.auth().addStateDidChangeListener { auth, user in
+            self.userIsLoggedIn = user != nil
+        }
+    }
+}
 
 struct ContentView: View {
-    @State private var userIsLoggedIn = false
+    @StateObject private var authViewModel = AuthViewModel()
+    
     var body: some View {
-        if userIsLoggedIn{
+        if authViewModel.userIsLoggedIn {
             HomeView()
-        }else{
+        } else {
             Onboarding1()
         }
     }
@@ -23,3 +35,4 @@ struct ContentView_Previews: PreviewProvider {
         ContentView()
     }
 }
+
