@@ -22,15 +22,12 @@ final class AuthenticationManager{
     static let shared = AuthenticationManager()
     private init(){}
     
-    func createUser(email: String, password: String, name: String) async throws {
+    func createUser(email: String, password: String) async throws {
         do {
             let authDataResult = try await Auth.auth().createUser(withEmail: email, password: password)
             let result = AuthDataResultModel(user: authDataResult.user)
             
-            // Update user profile with the provided name
-            let changeRequest = authDataResult.user.createProfileChangeRequest()
-            changeRequest.displayName = name
-            try await changeRequest.commitChanges()
+    
             
             print("User created successfully with UID: \(result.uid)")
         } catch {
@@ -38,5 +35,6 @@ final class AuthenticationManager{
             throw error // Rethrow the error to the caller if needed
         }
     }
+
 
 }

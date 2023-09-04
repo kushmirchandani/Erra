@@ -153,7 +153,7 @@ final class Login1ViewModel: ObservableObject {
     @Published var name = ""
     
     func signIn(completion: @escaping (Bool) -> Void) {
-        guard !email.isEmpty, !password.isEmpty, !name.isEmpty else {
+        guard !email.isEmpty, !password.isEmpty else {
             print("Please fill out all required fields.")
             completion(false)
             return
@@ -161,7 +161,7 @@ final class Login1ViewModel: ObservableObject {
         
         Task {
             do {
-                let returnedUserData: () = try await AuthenticationManager.shared.createUser(email: email, password: password, name: name)
+                let returnedUserData: () = try await AuthenticationManager.shared.createUser(email: email, password: password)
                 print("Success")
                 print(returnedUserData)
                 completion(true)
