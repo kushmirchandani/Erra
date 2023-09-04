@@ -56,12 +56,13 @@ struct UserCard: View {
                 .frame(width: 80, height: 80)
                 .clipShape(Circle())
             
-            Text("Deborah Schultz")
+            Text("/UserName")
                 .font(.title)
             
-            Text("Member since July 1, 2023")
+            Text("/User City, State")
                 .font(.caption)
                 .foregroundColor(.gray)
+                
                 
         }
         .padding(.vertical, 20)

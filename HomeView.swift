@@ -9,77 +9,40 @@ import SwiftUI
 
 struct HomeView: View {
     var body: some View {
-        NavigationView {
-            VStack(spacing: 20) {
-                Spacer(minLength: 0)
-                
-                Text("Welcome to Erra")
-                    .font(.largeTitle)
-                    .fontWeight(.bold)
-                    .padding(.top, 40)
-                
-                Text("Test Prep Simplified")
-                    .font(.title2)
+        VStack{
+            Group{
+                Text("Hey, Deborah")
+                    .font(Font.custom("Inter", size: 24))
+                    .foregroundColor(.black)
+                Text("Welcome back to your circle")
+                    .font(Font.custom("Inter", size: 12))
                     .foregroundColor(.gray)
-                
-                Spacer()
-                
-                HStack(spacing: 20) {
-                    NavigationLink(destination: SettingsView()) {
-                        DashboardItem(imageName: "book.fill", title: "Practice")
-                    }
-                    NavigationLink(destination: ErrorLogView()) {
-                        DashboardItem(imageName: "clock.fill", title: "Error Log")
-                    }
-                }
-                .padding(.horizontal, 20)
-                
-                HStack(spacing: 20) {
-                    NavigationLink(destination: TipsView()) {
-                        DashboardItem(imageName: "lightbulb.fill", title: "Exam Tips")
-                    }
-                    NavigationLink(destination: SettingsView()) {
-                        DashboardItem(imageName: "person.fill", title: "Settings")
-                    }
-                }
-                .padding(.horizontal, 20)
-                
-                Spacer()
             }
-            .padding()
-            .background(Color.white)
-            .edgesIgnoringSafeArea(.all)
-        }
-    }
-}
-
-
-struct DashboardItem: View {
-    var imageName: String
-    var title: String
-    
-    var body: some View {
-        VStack(spacing: 10) {
-            Image(systemName: imageName)
-                .font(.system(size: 50))
-                .foregroundColor(.black)
-                .padding()
-                .background(Color.white)
-                .cornerRadius(15)
+            .padding(5)
             
-            Text(title)
-                .font(.headline)
-                .foregroundColor(.black)
-                .multilineTextAlignment(.center)
-        }
-        .frame(width: 150, height: 150)
-        .background(Color.gray.opacity(0.1))
-        .cornerRadius(20)
-    }
-}
+            Rectangle()
+                  .foregroundColor(.clear)
+                  .frame(width: 352, height: 438)
+                  .background(
+                    AsyncImage(url: URL(string: "https://via.placeholder.com/352x438"))
+                  )
+                  .cornerRadius(10)
+                Rectangle()
+                  .foregroundColor(.clear)
+                  .frame(width: 390, height: 165)
+                  .background(
+                    LinearGradient(gradient: Gradient(colors: [Color(red: 1, green: 1, blue: 1).opacity(0.95), Color(red: 1, green: 1, blue: 1).opacity(0)]), startPoint: .top, endPoint: .bottom)
+                  )
+            Text("Tools")
+                .font(.title)
 
-struct HomeView_Previews: PreviewProvider {
-    static var previews: some View {
-        HomeView()
+            
+        }
     }
 }
+    struct HomeView_Previews: PreviewProvider {
+        static var previews: some View {
+            HomeView()
+        }
+    }
+    
