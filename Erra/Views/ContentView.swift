@@ -28,13 +28,17 @@ struct ContentView: View {
         
         let onboardingEntities = try? managedObjectContext.fetch(fetchRequest)
         let isOnboardingCompleted = onboardingEntities?.first?.isOnboardingCompleted ?? false
+        let isAddressCompleted = onboardingEntities?.first?.isAddressCompleted ?? false
         
-        if authViewModel.userIsLoggedIn {
+        if authViewModel.userIsLoggedIn && isOnboardingCompleted && isAddressCompleted {
             HomeView()
-        } else if !isOnboardingCompleted {
+        } else if !isOnboardingCompleted && !isAddressCompleted {
             Onboarding1()
-        } else {
-            HomeView()
+        } else if isOnboardingCompleted && !isAddressCompleted{
+            Onboarding3()
+           }
+        else{
+            Placeholder()
         }
     }
 }

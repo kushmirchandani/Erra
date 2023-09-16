@@ -33,7 +33,13 @@ class DataManager: ObservableObject {
                     
                     if let idString = data["id"] as? String {
                         let name = data["name"] as? String ?? ""
-                        let user = UserIDs(id: idString, name: name)
+                        let address1 = data["address1"] as? String ?? ""
+                        let address2 = data["address2"] as? String ?? ""
+                        let address3 = data["address3"] as? String ?? ""
+                   //     let city = data["city"] as? String ?? ""
+                        
+                        
+                        let user = UserIDs(id: idString, name: name, address1: address1, address2:address2, address3: address3)
                         self.users.append(user)
                     }
                 }
@@ -50,4 +56,40 @@ class DataManager: ObservableObject {
             }
         }
     }
+    
+    func addAddress1( address: String, city: String, country: String, id:String) async throws{
+        let db = Firestore.firestore()
+        let ref = db.collection("Users").document(id)
+        // Use FieldValue.arrayUnion to add the address to an array field in the document.
+        try await ref.updateData(["address1": FieldValue.arrayUnion([address])])
+        try await ref.updateData(["address1": FieldValue.arrayUnion([city])])
+        try await ref.updateData(["address1": FieldValue.arrayUnion([country])])
+
+    }
+    
+    
+    
+    
+    
+    func addAddress2( address: String, city: String, country: String, id:String) async throws{
+        let db = Firestore.firestore()
+        let ref = db.collection("Users").document(id)
+        // Use FieldValue.arrayUnion to add the address to an array field in the document.
+        try await ref.updateData(["address2": FieldValue.arrayUnion([address])])
+        try await ref.updateData(["address2": FieldValue.arrayUnion([city])])
+        try await ref.updateData(["address2": FieldValue.arrayUnion([country])])
+    }
+    
+    
+    
+    func addAddress3( address: String, city: String, country: String, id:String) async throws{
+        let db = Firestore.firestore()
+        let ref = db.collection("Users").document(id)
+        // Use FieldValue.arrayUnion to add the address to an array field in the document.
+        try await ref.updateData(["address3": FieldValue.arrayUnion([address])])
+        try await ref.updateData(["address3": FieldValue.arrayUnion([city])])
+        try await ref.updateData(["address3": FieldValue.arrayUnion([country])])
+    }
+    
+    
 }

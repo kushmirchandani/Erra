@@ -26,10 +26,12 @@ struct PersistenceController {
     }
     
     // Function to create a new 'Onboarding' instance
-    func createOnboarding(isOnboardingCompleted: Bool) {
+    func createOnboarding(isOnboardingCompleted: Bool, isAddressCompleted: Bool, uniqueIdentifier: String) {
         let viewContext = container.viewContext
         let newOnboarding = Onboarding(context: viewContext)
         newOnboarding.isOnboardingCompleted = isOnboardingCompleted
+        newOnboarding.isAddressCompleted = isAddressCompleted
+        newOnboarding.uniqueIdentifier = uniqueIdentifier
         
         do {
             try viewContext.save()

@@ -32,6 +32,9 @@
 		6D0EA01B2A5B1EE000933D09 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D0EA01A2A5B1EE000933D09 /* SettingsView.swift */; };
 		6D0EA0262A6064A200933D09 /* ErrorLogView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D0EA0252A6064A200933D09 /* ErrorLogView.swift */; };
 		8F27B7DA2A6041A7007C149B /* AuthenticantionManager .swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F27B7D92A6041A7007C149B /* AuthenticantionManager .swift */; };
+		8F3D0CDF2AB5F9C700AE2AB0 /* Placeholder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F3D0CDE2AB5F9C700AE2AB0 /* Placeholder.swift */; };
+		8F3D0CE22AB6231100AE2AB0 /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F3D0CE12AB6231100AE2AB0 /* MapView.swift */; };
+		8F3D0CE42AB624E000AE2AB0 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F3D0CE32AB624E000AE2AB0 /* LoadingView.swift */; };
 		8F54A96C2AA211CB0071A96B /* Onboarding3.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F54A96B2AA211CB0071A96B /* Onboarding3.swift */; };
 		8F6AC9262AA3835600F90966 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F6AC9252AA3835600F90966 /* DataManager.swift */; };
 		8F6AC9282AA3839400F90966 /* UserIDs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F6AC9272AA3839400F90966 /* UserIDs.swift */; };
@@ -81,6 +84,9 @@
 		6D0EA01C2A5B2F7700933D09 /* Erra.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Erra.entitlements; sourceTree = "<group>"; };
 		6D0EA0252A6064A200933D09 /* ErrorLogView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorLogView.swift; sourceTree = "<group>"; };
 		8F27B7D92A6041A7007C149B /* AuthenticantionManager .swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AuthenticantionManager .swift"; sourceTree = "<group>"; };
+		8F3D0CDE2AB5F9C700AE2AB0 /* Placeholder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Placeholder.swift; sourceTree = "<group>"; };
+		8F3D0CE12AB6231100AE2AB0 /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
+		8F3D0CE32AB624E000AE2AB0 /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
 		8F54A96B2AA211CB0071A96B /* Onboarding3.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Onboarding3.swift; sourceTree = "<group>"; };
 		8F6AC9252AA3835600F90966 /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
 		8F6AC9272AA3839400F90966 /* UserIDs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserIDs.swift; sourceTree = "<group>"; };
@@ -203,6 +209,7 @@
 		6D0C6F822A59B3A4004846AA /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				8F3D0CE02AB622FB00AE2AB0 /* Components  */,
 				8F54A96B2AA211CB0071A96B /* Onboarding3.swift */,
 				6D0C6F842A59B401004846AA /* HomeView.swift */,
 				6D0EA0252A6064A200933D09 /* ErrorLogView.swift */,
@@ -212,6 +219,8 @@
 				8FB9A66A2AA02649004A610D /* Onboarding2.swift */,
 				8F6AC92B2AA38D4C00F90966 /* TipsView.swift */,
 				8F6AC9322AA6954C00F90966 /* Login.swift */,
+				8F3D0CDE2AB5F9C700AE2AB0 /* Placeholder.swift */,
+				8F3D0CE32AB624E000AE2AB0 /* LoadingView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -225,6 +234,14 @@
 				8F27B7D92A6041A7007C149B /* AuthenticantionManager .swift */,
 			);
 			path = Auth;
+			sourceTree = "<group>";
+		};
+		8F3D0CE02AB622FB00AE2AB0 /* Components  */ = {
+			isa = PBXGroup;
+			children = (
+				8F3D0CE12AB6231100AE2AB0 /* MapView.swift */,
+			);
+			path = "Components ";
 			sourceTree = "<group>";
 		};
 		8FB9A65A2AA00F5D004A610D /* Inter */ = {
@@ -411,6 +428,7 @@
 				8F6AC9312AA6826900F90966 /* Ignis.xcdatamodeld in Sources */,
 				8F27B7DA2A6041A7007C149B /* AuthenticantionManager .swift in Sources */,
 				8F6AC9262AA3835600F90966 /* DataManager.swift in Sources */,
+				8F3D0CE22AB6231100AE2AB0 /* MapView.swift in Sources */,
 				6D0C6F872A59CD8D004846AA /* LoginView.swift in Sources */,
 				8F54A96C2AA211CB0071A96B /* Onboarding3.swift in Sources */,
 				6D0C6F5B2A58810E004846AA /* Persistence.swift in Sources */,
@@ -420,6 +438,8 @@
 				8FB9A66B2AA02649004A610D /* Onboarding2.swift in Sources */,
 				6D0EA0262A6064A200933D09 /* ErrorLogView.swift in Sources */,
 				8F6AC9332AA6954C00F90966 /* Login.swift in Sources */,
+				8F3D0CE42AB624E000AE2AB0 /* LoadingView.swift in Sources */,
+				8F3D0CDF2AB5F9C700AE2AB0 /* Placeholder.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -586,6 +606,7 @@
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LoadingView;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -617,6 +638,7 @@
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LoadingView;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (

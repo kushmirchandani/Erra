@@ -4,14 +4,16 @@
 //
 //  Created by Heidi Schultz on 8/30/23.
 //
+
+
 import SwiftUI
 import FirebaseAuth
 import CoreData
 
 struct Onboarding2: View {
     @StateObject private var viewModel1 = Login1ViewModel()
-    @State private var isHomeViewActive = false
-    @State private var isPresentingHomeView = false
+    @State private var isOnboarding3Active = false
+    @State private var isPresentingOnboarding3 = false
     @StateObject private var viewModel2 = NameViewModel()
     let managedObjectContext = PersistenceController.shared.container.viewContext
     @StateObject private var viewModel = Onboarding2ViewModel()
@@ -33,7 +35,7 @@ struct Onboarding2: View {
                         .frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height * 0.45)
                         .foregroundColor(.white)
                 }
-                
+                //rectangle that comes up
                 Rectangle()
                     .frame(width: UIScreen.main.bounds.width * 0.90, height: UIScreen.main.bounds.height * 0.30)
                     .foregroundColor(.white)
@@ -51,6 +53,8 @@ struct Onboarding2: View {
                         .frame(width: UIScreen.main.bounds.width * 0.93)
                         .padding(.top, 60)
                     
+                    
+                    //first name
                     TextField("Enter Your First name", text: $viewModel2.firstName)
                         .padding()
                         .background(
@@ -59,6 +63,13 @@ struct Onboarding2: View {
                                 Rectangle().frame(height: 1).foregroundColor(.gray)
                             }
                         )
+                        .onChange(of: viewModel2.firstName) { newValue in
+                                if newValue.count > 15 {
+                                    viewModel2.firstName = String(newValue.prefix(15))
+                                }
+                            }
+                    
+                    //last name
                     TextField("Enter Your Last name", text: $viewModel2.lastName)
                         .padding()
                         .background(
@@ -67,7 +78,13 @@ struct Onboarding2: View {
                                 Rectangle().frame(height: 1).foregroundColor(.gray)
                             }
                         )
-                
+                        .onChange(of: viewModel2.lastName) { newValue in
+                                if newValue.count > 15 {
+                                    viewModel2.lastName = String(newValue.prefix(15))
+                                }
+                            }
+                    
+                //email
                     TextField("Enter Your Email", text: $viewModel1.email)
                         .padding()
                         .background(
@@ -77,7 +94,7 @@ struct Onboarding2: View {
                             }
                         )
                     
-                    
+                    //password
                     SecureField("Enter Your Password", text: $viewModel1.password)
                         .padding()
                         .background(
@@ -88,9 +105,9 @@ struct Onboarding2: View {
                         )
                   
                     
-                    
+                    //sign up button
                     Button(action: {
-                        viewModel1.signIn() { success in
+                        viewModel1.signUp() { success in
                                 if success {
                                     // Fetching user UID for the button
                                     if let user = Auth.auth().currentUser {
@@ -98,7 +115,7 @@ struct Onboarding2: View {
                                         viewModel2.nameFunc(forUser: uid) { success in
                                             if success {
                                                 viewModel.CoreDataVM1.updateOnboardingStatus(forUser: uid)
-                                                isPresentingHomeView = true
+                                                isPresentingOnboarding3 = true
                                             }
                                         }
                                     } else {
@@ -138,8 +155,8 @@ struct Onboarding2: View {
             }
             .edgesIgnoringSafeArea(.all)
             .background(Color.white)
-            .fullScreenCover(isPresented: $isPresentingHomeView) {
-                HomeView()
+            .fullScreenCover(isPresented: $isPresentingOnboarding3) {
+                Onboarding3()
             }
         }
         .navigationBarHidden(true)
@@ -157,7 +174,7 @@ final class Login1ViewModel: ObservableObject {
     @Published var password = ""
     @Published var name = ""
     
-    func signIn(completion: @escaping (Bool) -> Void) {
+    func signUp(completion: @escaping (Bool) -> Void) {
         guard !email.isEmpty, !password.isEmpty else {
             print("Please fill out all required fields.")
             completion(false)

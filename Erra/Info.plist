@@ -13,13 +13,13 @@
 			</array>
 		</dict>
 	</array>
+	<key>GIDClientID</key>
+	<string>889003859864-m1qcsp2i9p6q649hmjp0gt54ft8sjc5g.apps.googleusercontent.com
+</string>
 	<key>UIAppFonts</key>
 	<array>
 		<string>Inter/static/Inter-Thin.ttf</string>
 		<string>Inter/static/Inter-Regular.ttf</string>
 	</array>
-	<key>GIDClientID</key>
-	<string>889003859864-m1qcsp2i9p6q649hmjp0gt54ft8sjc5g.apps.googleusercontent.com
-</string>
 </dict>
 </plist>
