@@ -33,13 +33,7 @@ struct ErraApp: App {
             ContentView()
                  .environment(\.managedObjectContext, persistenceController.container.viewContext)
             
-            // Pass the managedObjectContext to Onboarding1
-            Onboarding1()
-                .environment(\.managedObjectContext, persistenceController.container.viewContext)
             
-            // Pass the managedObjectContext to Onboarding2
-            Onboarding2()
-                .environment(\.managedObjectContext, persistenceController.container.viewContext)
         }
     }
 }
