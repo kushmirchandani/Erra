@@ -18,6 +18,36 @@ class DataManager: ObservableObject {
         fetchUserIDs()
     }
     
+    
+    func fetchAddress1(completion: @escaping (String?) -> Void) {
+        
+        
+        if let uid = Auth.auth().currentUser?.uid {
+            let db = Firestore.firestore()
+            let usersRef = db.collection("Users")
+            let userDocumentRef = usersRef.document(uid)
+            
+            //reading data
+            userDocumentRef.getDocument { (document, error) in
+                if let document = document, document.exists {
+                    let data = document.data()
+                    if let address1Array = data?["address1"] as? [String] {
+                        
+                        // array to string
+                        let formattedAddress1 = address1Array.joined(separator: ", ")
+                        completion(formattedAddress1)
+                    } else {
+                        completion(nil)
+                        print("address1 field doesn't exist ")
+                    }
+                } else {
+                    completion(nil)
+                    print("doc dosen't exsists / error")
+                }
+            }
+        }
+    }
+    
     func fetchUserIDs() {
         users.removeAll()
         let db = Firestore.firestore()
@@ -36,7 +66,7 @@ class DataManager: ObservableObject {
                         let address1 = data["address1"] as? String ?? ""
                         let address2 = data["address2"] as? String ?? ""
                         let address3 = data["address3"] as? String ?? ""
-                   //     let city = data["city"] as? String ?? ""
+                
                         
                         
                         let user = UserIDs(id: idString, name: name, address1: address1, address2:address2, address3: address3)
@@ -60,7 +90,7 @@ class DataManager: ObservableObject {
     func addAddress1( address: String, city: String, country: String, id:String) async throws{
         let db = Firestore.firestore()
         let ref = db.collection("Users").document(id)
-        // Use FieldValue.arrayUnion to add the address to an array field in the document.
+        //  add the address to an array field in the document
         try await ref.updateData(["address1": FieldValue.arrayUnion([address])])
         try await ref.updateData(["address1": FieldValue.arrayUnion([city])])
         try await ref.updateData(["address1": FieldValue.arrayUnion([country])])
@@ -74,7 +104,7 @@ class DataManager: ObservableObject {
     func addAddress2( address: String, city: String, country: String, id:String) async throws{
         let db = Firestore.firestore()
         let ref = db.collection("Users").document(id)
-        // Use FieldValue.arrayUnion to add the address to an array field in the document.
+        // add the address to an array field in the document
         try await ref.updateData(["address2": FieldValue.arrayUnion([address])])
         try await ref.updateData(["address2": FieldValue.arrayUnion([city])])
         try await ref.updateData(["address2": FieldValue.arrayUnion([country])])
@@ -85,7 +115,7 @@ class DataManager: ObservableObject {
     func addAddress3( address: String, city: String, country: String, id:String) async throws{
         let db = Firestore.firestore()
         let ref = db.collection("Users").document(id)
-        // Use FieldValue.arrayUnion to add the address to an array field in the document.
+        //  add the address to an array field in the document
         try await ref.updateData(["address3": FieldValue.arrayUnion([address])])
         try await ref.updateData(["address3": FieldValue.arrayUnion([city])])
         try await ref.updateData(["address3": FieldValue.arrayUnion([country])])

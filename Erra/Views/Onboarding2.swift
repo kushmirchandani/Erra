@@ -181,13 +181,13 @@ final class Login1ViewModel: ObservableObject {
             return
         }
         
-        Task {
-            do {
-                let returnedUserData: () = try await AuthenticationManager.shared.createUser(email: email, password: password)
+        // Call createUser from AuthenticationManager with a completion handler
+        AuthenticationManager.shared.createUser(email: email, password: password) { result in
+            switch result {
+            case .success:
                 print("Success")
-                print(returnedUserData)
                 completion(true)
-            } catch {
+            case .failure(let error):
                 print("Error: \(error)")
                 completion(false)
             }

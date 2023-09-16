@@ -8,6 +8,9 @@
 import SwiftUI
 struct HomeView: View {
     @StateObject private var LogoutVM1 = LogoutVM()
+   
+    @State private var isPlaceholderPresented = false
+   
     var body: some View {
         VStack{
         Group{
@@ -38,7 +41,13 @@ struct HomeView: View {
                 .font(.title)
             
             Button(action: {
-                LogoutVM1.signout()
+                LogoutVM1.signout() { signoutSuccess in
+                    if signoutSuccess {
+                        isPlaceholderPresented.toggle()
+                    } else {
+                        print("signout failed")
+                    }
+                }
             }) {
                 Text("Sign Out")
                     .foregroundColor(.red)
@@ -59,7 +68,10 @@ struct HomeView_Previews: PreviewProvider {
 
 final class LogoutVM: ObservableObject {
     
-    func signout() {
-        AuthenticationManager.shared.logout()
+    func signout(completion: @escaping (Bool) -> Void) {
+        
+            AuthenticationManager.shared.logout()
+            completion(true)
+      
     }
 }
