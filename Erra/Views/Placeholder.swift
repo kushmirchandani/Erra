@@ -85,7 +85,9 @@ struct Placeholder: View {
                                 .padding(.top, 20)
                                 
                         }
-                        
+                        .fullScreenCover(isPresented: $isHomeViewPresented) {
+                            HomeView()
+                        }
                         
                     }
                     

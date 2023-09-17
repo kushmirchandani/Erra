@@ -7,7 +7,7 @@
 
 import SwiftUI
 struct HomeView: View {
-    @StateObject private var LogoutVM1 = LogoutVM()
+    @StateObject private var LogoutVM1 = LogoutVM2()
    
     @State private var isPlaceholderPresented = false
    
@@ -66,7 +66,7 @@ struct HomeView_Previews: PreviewProvider {
     }
 }
 
-final class LogoutVM: ObservableObject {
+final class LogoutVM2: ObservableObject {
     
     func signout(completion: @escaping (Bool) -> Void) {
         

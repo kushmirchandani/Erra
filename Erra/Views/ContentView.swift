@@ -10,12 +10,19 @@ import FirebaseAuth
 import CoreData
 
 class AuthViewModel: ObservableObject {
-    @Published var userIsLoggedIn = false
+    @Published var currentUserId: String = ""
+    private var handler: AuthStateDidChangeListenerHandle?
     
     init() {
-        Auth.auth().addStateDidChangeListener { auth, user in
-            self.userIsLoggedIn = user != nil
+        self.handler = Auth.auth().addStateDidChangeListener { [weak self] _, user in
+            DispatchQueue.main.async {
+                self?.currentUserId = user?.uid ?? ""
+            }
         }
+    }
+    
+    public var isSignedIn: Bool {
+        return Auth.auth().currentUser != nil
     }
 }
 
@@ -24,20 +31,23 @@ struct ContentView: View {
     @Environment(\.managedObjectContext) private var managedObjectContext
     
     var body: some View {
-        let fetchRequest: NSFetchRequest<Onboarding> = Onboarding.fetchRequest()
-        
-        let onboardingEntities = try? managedObjectContext.fetch(fetchRequest)
-        let isOnboardingCompleted = onboardingEntities?.first?.isOnboardingCompleted ?? false
-        let isAddressCompleted = onboardingEntities?.first?.isAddressCompleted ?? false
-        
-        if authViewModel.userIsLoggedIn && isOnboardingCompleted && isAddressCompleted {
-            HomeView()
-        } else if !isOnboardingCompleted && !isAddressCompleted {
-            Onboarding1()
-        } else if isOnboardingCompleted && !isAddressCompleted{
-            Onboarding3()
-           }
-        else{
+        if authViewModel.isSignedIn {
+            // Check onboarding and address completion statuses and display views accordingly
+            let fetchRequest: NSFetchRequest<Onboarding> = Onboarding.fetchRequest()
+            let onboardingEntities = try? managedObjectContext.fetch(fetchRequest)
+            let isOnboardingCompleted = onboardingEntities?.first?.isOnboardingCompleted ?? false
+            let isAddressCompleted = onboardingEntities?.first?.isAddressCompleted ?? false
+            
+            if isOnboardingCompleted && isAddressCompleted {
+                HomeView()
+            } else if !isOnboardingCompleted && !isAddressCompleted {
+                Onboarding1()
+            } else if isOnboardingCompleted && !isAddressCompleted {
+                Onboarding3()
+            } else {
+                Placeholder()
+            }
+        } else {
             Placeholder()
         }
     }

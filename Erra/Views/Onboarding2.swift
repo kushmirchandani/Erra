@@ -133,6 +133,8 @@ struct Onboarding2: View {
                             .cornerRadius(10)
                             .padding(.top, 50)
                     }
+                    
+                    
                 }
                 .offset(y: 120)
                 .padding(.bottom, 50)

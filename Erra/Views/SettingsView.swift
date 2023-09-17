@@ -8,6 +8,10 @@
 import SwiftUI
 
 struct SettingsView: View {
+    
+    @StateObject private var LogoutVM1 = logoutVM()
+    @State private var isPlaceholderPresented = false
+    
     var body: some View {
         NavigationView {
             Form {
@@ -35,8 +39,14 @@ struct SettingsView: View {
                 
                 Section {
                     Button(action: {
-                        // Action when the Sign Out button is tapped
-                    }) {
+                        LogoutVM1.signout() { signoutSuccess in
+                            if signoutSuccess {
+                                isPlaceholderPresented.toggle()
+                            } else {
+                                print("signout failed")
+                            }
+                        }
+                    })  {
                         Text("Sign Out")
                             .foregroundColor(.red)
                     }
@@ -93,5 +103,16 @@ struct SettingRow: View {
 struct SettingsView_Previews: PreviewProvider {
     static var previews: some View {
         SettingsView()
+    }
+}
+
+
+final class logoutVM: ObservableObject {
+    
+    func signout(completion: @escaping (Bool) -> Void) {
+        
+            AuthenticationManager.shared.logout()
+            completion(true)
+      
     }
 }
