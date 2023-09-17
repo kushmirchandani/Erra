@@ -237,7 +237,8 @@ final class CoreDataVM: ObservableObject {
         // Fetch and update the Onboarding entity
         let fetchRequest: NSFetchRequest<Onboarding> = Onboarding.fetchRequest()
         fetchRequest.predicate = NSPredicate(format: "uniqueIdentifier == %@", uid)
-
+        
+    
         do {
             let onboardingEntities = try managedObjectContext.fetch(fetchRequest)
             if let onboardingEntity = onboardingEntities.first {

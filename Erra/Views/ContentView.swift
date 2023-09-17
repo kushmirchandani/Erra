@@ -9,6 +9,7 @@ import SwiftUI
 import FirebaseAuth
 import CoreData
 
+//user state
 class AuthViewModel: ObservableObject {
     @Published var currentUserId: String = ""
     private var handler: AuthStateDidChangeListenerHandle?
@@ -32,26 +33,63 @@ struct ContentView: View {
     
     var body: some View {
         if authViewModel.isSignedIn {
-            // Check onboarding and address completion statuses and display views accordingly
-            let fetchRequest: NSFetchRequest<Onboarding> = Onboarding.fetchRequest()
-            let onboardingEntities = try? managedObjectContext.fetch(fetchRequest)
-            let isOnboardingCompleted = onboardingEntities?.first?.isOnboardingCompleted ?? false
-            let isAddressCompleted = onboardingEntities?.first?.isAddressCompleted ?? false
-            
-            if isOnboardingCompleted && isAddressCompleted {
-                HomeView()
-            } else if !isOnboardingCompleted && !isAddressCompleted {
-                Onboarding1()
-            } else if isOnboardingCompleted && !isAddressCompleted {
-                Onboarding3()
-            } else {
-                Placeholder()
-            }
+            OnboardingView()
         } else {
             Placeholder()
         }
     }
 }
+
+
+
+struct OnboardingView: View {
+    @ObservedObject private var viewModel = OnboardingViewModel()
+    
+    var body: some View {
+        viewModel.determineNextView()
+    }
+}
+
+
+//logic
+
+class OnboardingViewModel: ObservableObject {
+    @Published var isOnboardingCompleted = false
+    @Published var isAddressCompleted = false
+    
+    init() {
+        fetchOnboardingFlags()
+    }
+    
+    func fetchOnboardingFlags() {
+        // Fetch isOnboardingCompleted and isAddressCompleted flags from Core Data
+        let fetchRequest: NSFetchRequest<Onboarding> = Onboarding.fetchRequest()
+        do {
+            let onboardingEntities = try PersistenceController.shared.container.viewContext.fetch(fetchRequest)
+            if let onboardingEntity = onboardingEntities.first {
+                isOnboardingCompleted = onboardingEntity.isOnboardingCompleted
+                isAddressCompleted = onboardingEntity.isAddressCompleted
+            }
+        } catch {
+            print("Error fetching Onboarding entity: \(error)")
+        }
+    }
+    
+    func determineNextView() -> AnyView {
+        if isOnboardingCompleted && isAddressCompleted {
+            return AnyView(HomeView())
+        } else if !isOnboardingCompleted && !isAddressCompleted {
+            return AnyView(Onboarding1())
+        } else if isOnboardingCompleted && !isAddressCompleted {
+            return AnyView(Onboarding3())
+        } else {
+            return AnyView(Placeholder())
+        }
+    }
+}
+
+
+
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
