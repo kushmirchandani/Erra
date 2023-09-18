@@ -9,7 +9,6 @@ import SwiftUI
 import FirebaseAuth
 import CoreData
 
-//user state
 class AuthViewModel: ObservableObject {
     @Published var currentUserId: String = ""
     private var handler: AuthStateDidChangeListenerHandle?
@@ -31,36 +30,63 @@ struct ContentView: View {
     @StateObject private var authViewModel = AuthViewModel()
     @Environment(\.managedObjectContext) private var managedObjectContext
     
+    @AppStorage("addressCompleted") var addressCompleted: Bool?
+    @AppStorage("signUpCompleted") var signUpCompleted: Bool?
+    
     var body: some View {
-        if authViewModel.isSignedIn {
-            OnboardingView()
-        } else {
-            Placeholder()
+        ZStack {
+            if authViewModel.isSignedIn {
+                if let addressCompleted = addressCompleted, let signUpCompleted = signUpCompleted {
+                    if addressCompleted && signUpCompleted {
+                        HomeView()
+                    } else if !addressCompleted && signUpCompleted {
+                        Onboarding3()
+                    } else {
+                        Onboarding1()
+                    }
+                } else {
+                    Onboarding1() //in case of nil
+                }
+            } else {
+                if let addressCompleted = addressCompleted, let signUpCompleted = signUpCompleted {
+                    if addressCompleted && signUpCompleted {
+                        Placeholder()
+                    } else if !signUpCompleted && !addressCompleted {
+                        Onboarding1()
+                    } else if !addressCompleted && signUpCompleted {
+                        Onboarding3()
+                    } else {
+                        Onboarding1()
+                    }
+                } else {
+                    Onboarding1() //in case of nil
+                }
+            }
+        }
+        .onAppear() {
+            addressCompleted = UserDefaults.standard.bool(forKey: "addressCompleted")
+            signUpCompleted = UserDefaults.standard.bool(forKey: "signUpCompleted")
         }
     }
 }
 
-
-
-struct OnboardingView: View {
-    @ObservedObject private var viewModel = OnboardingViewModel()
-    
-    var body: some View {
-        viewModel.determineNextView()
+struct ContentView_Previews: PreviewProvider {
+    static var previews: some View {
+        ContentView()
+            .environment(\.managedObjectContext, PersistenceController.shared.container.viewContext)
     }
 }
 
 
-//logic
 
+/*
 class OnboardingViewModel: ObservableObject {
     @Published var isOnboardingCompleted = false
     @Published var isAddressCompleted = false
     
-    init() {
-        fetchOnboardingFlags()
-    }
     
+    
+    /*
     func fetchOnboardingFlags() {
         // Fetch isOnboardingCompleted and isAddressCompleted flags from Core Data
         let fetchRequest: NSFetchRequest<Onboarding> = Onboarding.fetchRequest()
@@ -74,6 +100,7 @@ class OnboardingViewModel: ObservableObject {
             print("Error fetching Onboarding entity: \(error)")
         }
     }
+    */
     
     func determineNextView() -> AnyView {
         if isOnboardingCompleted && isAddressCompleted {
@@ -89,11 +116,5 @@ class OnboardingViewModel: ObservableObject {
 }
 
 
+*/
 
-
-struct ContentView_Previews: PreviewProvider {
-    static var previews: some View {
-        ContentView()
-            .environment(\.managedObjectContext, PersistenceController.shared.container.viewContext)
-    }
-}

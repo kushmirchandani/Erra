@@ -17,9 +17,11 @@ import CoreData
 
 struct Onboarding3: View {
     @State private var isHomeViewPresented = false
-    let managedObjectContext = PersistenceController.shared.container.viewContext
+    //let managedObjectContext = PersistenceController.shared.container.viewContext
     @StateObject private var viewModelAddress = AddressViewModel()
-    @StateObject private var viewModel = Onboarding3ViewModel()
+    //@StateObject private var viewModel = Onboarding3ViewModel()
+    @AppStorage("addressCompleted") var addressCompleted : Bool?
+    
     
     var body: some View {
         GeometryReader { geometry in
@@ -42,11 +44,20 @@ struct Onboarding3: View {
                             .frame(width: UIScreen.main.bounds.width * 0.90, height: UIScreen.main.bounds.height * 0.30)
                             .foregroundColor(.white)
                             .cornerRadius(8)
+                        // Fix static
+                        
+                        Image("Logo")
+                            .resizable()
+                            .aspectRatio(contentMode: .fit)
+                            .frame(width: 210, height: 200)
+                            .offset(x: 70, y: -50)
+                        
                         
                         VStack {
                             Text("Add a Primary Address")
                                 .font(Font.custom("Inter-Regular", size: 24))
-                                .padding(.bottom, 80)
+                                .padding(.bottom, 50)
+                                .padding(.top, 60)
                             
                             TextField("Street", text: $viewModelAddress.primary)
                                 .padding()
@@ -78,39 +89,28 @@ struct Onboarding3: View {
                                 )
                                 .frame(width: UIScreen.main.bounds.width * 0.80)
                         }
+                        .padding(.top, 100)
                     }
                     
-                    // Fix static
-                    Image("Logo")
-                        .resizable()
-                        .frame(width: 200, height: 200)
-                        .aspectRatio(contentMode: .fit)
-                        .position(x: 290, y: 700)
+                   
                     
                     // Bottom stuff
                     HStack(spacing: 130) {
-                        ZStack(alignment: .leading) {
-                            Rectangle()
-                                .frame(width: 150, height: 15)
-                                .foregroundColor(.gray)
-                                .cornerRadius(7)
-                            
-                            Rectangle()
-                                .frame(width: 25, height: 15)
-                                .foregroundColor(.black)
-                                .cornerRadius(7)
-                        }
+                       
                         Button(action: {
-                            // Check if a user is signed in
+                            // check if a user is signed in
                             if let user = Auth.auth().currentUser {
                                 let uid = user.uid
-                                
+                                var addressCompleted : Bool = false
                                 viewModelAddress.AddressFunc(forUser: uid) { addressSuccess in
                                     if addressSuccess {
-                                        // Update the address in CoreData
-                                        viewModel.CoreDataVM2.updateAddressStatus(forUser: uid)
+                                        // update the address
+                                       addressCompleted = true
+                                        UserDefaults.standard.set(addressCompleted,forKey: "addressCompleted")
                                         isHomeViewPresented.toggle()
                                     } else {
+                                        addressCompleted = false
+                                        UserDefaults.standard.set(addressCompleted,forKey: "addressCompleted")
                                         print("AddressFunc failed")
                                     }
                                 }
@@ -168,7 +168,7 @@ final class AddressViewModel: ObservableObject {
 }
 
 //Core data updating if address section completed
-
+/*
 final class CoreDataVM1: ObservableObject {
     private let managedObjectContext: NSManagedObjectContext
 
@@ -197,9 +197,12 @@ final class CoreDataVM1: ObservableObject {
 }
 
 
+
+
 final class Onboarding3ViewModel : ObservableObject {
 @StateObject var CoreDataVM2 = CoreDataVM1(managedObjectContext: PersistenceController.shared.container.viewContext)
 }
+ */
 
  struct Onboarding3_Previews: PreviewProvider {
      static var previews: some View {
