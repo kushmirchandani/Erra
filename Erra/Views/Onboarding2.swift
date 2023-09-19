@@ -15,9 +15,11 @@ struct Onboarding2: View {
     @State private var isOnboarding3Active = false
     @State private var isPresentingOnboarding3 = false
     @StateObject private var viewModel2 = NameViewModel()
-    let managedObjectContext = PersistenceController.shared.container.viewContext
-    @StateObject private var viewModel = Onboarding2ViewModel()
-    
+    //let managedObjectContext = PersistenceController.shared.container.viewContext
+   // @StateObject private var viewModel = Onboarding2ViewModel()
+    @AppStorage("signUpCompleted") var signUpCompleted : Bool?
+    @State private var isPlaceholderActive = false
+
  
     
     
@@ -108,17 +110,21 @@ struct Onboarding2: View {
                     //sign up button
                     Button(action: {
                         viewModel1.signUp() { success in
+                            var signUpCompleted : Bool = false
+
                                 if success {
                                     // Fetching user UID for the button
                                     if let user = Auth.auth().currentUser {
                                         let uid = user.uid
                                         viewModel2.nameFunc(forUser: uid) { success in
                                             if success {
-                                                viewModel.CoreDataVM1.updateOnboardingStatus(forUser: uid)
+                                               signUpCompleted = true
+                                                UserDefaults.standard.set(signUpCompleted, forKey: "signUpCompleted")
                                                 isPresentingOnboarding3 = true
                                             }
                                         }
                                     } else {
+                                        UserDefaults.standard.set(signUpCompleted, forKey: "signUpCompleted")
                                         print("No user authenticated")
                                     }
                                 }
@@ -133,25 +139,22 @@ struct Onboarding2: View {
                             .cornerRadius(10)
                             .padding(.top, 50)
                     }
+                    
+                    Button(action: {
+                            isPlaceholderActive = true
+                            }) {
+                                Text("Have an account?")
+                            }
+                            .fullScreenCover(isPresented: $isPlaceholderActive){
+                                Placeholder()
+                                                    }
+
                 }
                 .offset(y: 120)
+                .padding(.top, 50)
                 .padding(.bottom, 50)
                 .frame(width: UIScreen.main.bounds.width * 0.8)
                 
-                HStack(spacing: 130) {
-                    ZStack(alignment: .leading) {
-                        Rectangle()
-                            .frame(width: 150, height: 15)
-                            .foregroundColor(.gray)
-                            .cornerRadius(7)
-                        
-                        Rectangle()
-                            .frame(width: 50, height: 15)
-                            .foregroundColor(.black)
-                            .cornerRadius(7)
-                    }
-                }
-                .position(x: geometry.size.width / 2, y: geometry.size.height)
             }
             .edgesIgnoringSafeArea(.all)
             .background(Color.white)
@@ -223,7 +226,7 @@ final class NameViewModel: ObservableObject {
         }
     }
 }
-
+/*
 final class CoreDataVM: ObservableObject {
     private let managedObjectContext: NSManagedObjectContext
 
@@ -235,7 +238,8 @@ final class CoreDataVM: ObservableObject {
         // Fetch and update the Onboarding entity
         let fetchRequest: NSFetchRequest<Onboarding> = Onboarding.fetchRequest()
         fetchRequest.predicate = NSPredicate(format: "uniqueIdentifier == %@", uid)
-
+        
+    
         do {
             let onboardingEntities = try managedObjectContext.fetch(fetchRequest)
             if let onboardingEntity = onboardingEntities.first {
@@ -254,3 +258,4 @@ final class CoreDataVM: ObservableObject {
 final class Onboarding2ViewModel : ObservableObject {
 @StateObject var CoreDataVM1 = CoreDataVM(managedObjectContext: PersistenceController.shared.container.viewContext)
 }
+*/

@@ -28,7 +28,7 @@ struct Onboarding1: View {
                         .foregroundColor(.white)
                     
                 }
-                //fix this logo, its static 
+                //fix this logo, its static
                 Image("Logo")
                     .resizable()
                     .frame(width:200,height:200)
@@ -47,18 +47,7 @@ struct Onboarding1: View {
                 
                     
                     HStack (spacing: 130){
-                        ZStack(alignment: .leading){
-                            Rectangle()
-                                .frame(width: 150, height: 15)
-                                .foregroundColor(.gray)
-                                .cornerRadius(7)
-                            
-                            Rectangle()
-                                .frame(width:25, height: 15)
-                                .foregroundColor(.black)
-                                .cornerRadius(7)
-                            
-                        }
+                        
                         Button(action: {
                             isOnboarding2Presented = true
                         }) {
@@ -66,6 +55,7 @@ struct Onboarding1: View {
                                 .resizable()
                                 .aspectRatio(contentMode: .fill)
                                 .frame(width: 75, height: 75)
+                               
                         }
                         .fullScreenCover(isPresented: $isOnboarding2Presented) {
                             Onboarding2()
