@@ -116,7 +116,3 @@ class OnboardingViewModel: ObservableObject {
 
 
 */
-<<<<<<< HEAD
-
-=======
->>>>>>> main
