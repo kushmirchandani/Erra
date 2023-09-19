@@ -28,7 +28,7 @@ struct Onboarding1: View {
                         .foregroundColor(.white)
                     
                 }
-                //fix this logo, its static 
+                //fix this logo, its static
                 Image("Logo")
                     .resizable()
                     .frame(width:200,height:200)

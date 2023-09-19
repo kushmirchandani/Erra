@@ -4,7 +4,6 @@
 //
 //  Created by Kush Mirchandani on 7/7/23.
 //
-
 import SwiftUI
 import FirebaseAuth
 import CoreData
@@ -117,4 +116,7 @@ class OnboardingViewModel: ObservableObject {
 
 
 */
+<<<<<<< HEAD
 
+=======
+>>>>>>> main

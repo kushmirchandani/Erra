@@ -1,6 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Bucket
-   uuid = "ED459DE2-1BA2-4031-8C6D-1C454F3DFD50"
+   uuid = "2FF35044-ED71-4D21-A57A-C17F1A6CA054"
    type = "1"
    version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "B2E7CB66-5F72-41B8-BB24-D2AD38485BDF"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Erra/Views/ContentView.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "37"
+            endingLineNumber = "37"
+            landmarkName = "body"
+            landmarkType = "24">
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
 </Bucket>

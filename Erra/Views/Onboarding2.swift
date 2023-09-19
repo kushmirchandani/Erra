@@ -18,6 +18,8 @@ struct Onboarding2: View {
     //let managedObjectContext = PersistenceController.shared.container.viewContext
    // @StateObject private var viewModel = Onboarding2ViewModel()
     @AppStorage("signUpCompleted") var signUpCompleted : Bool?
+    @State private var isPlaceholderActive = false
+
  
     
     
@@ -138,7 +140,15 @@ struct Onboarding2: View {
                             .padding(.top, 50)
                     }
                     
-                    
+                    Button(action: {
+                            isPlaceholderActive = true
+                            }) {
+                                Text("Have an account?")
+                            }
+                            .fullScreenCover(isPresented: $isPlaceholderActive){
+                                Placeholder()
+                                                    }
+
                 }
                 .offset(y: 120)
                 .padding(.top, 50)
