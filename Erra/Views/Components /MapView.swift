@@ -62,11 +62,14 @@ struct CustomAnnotationView: View {
     var title: String
 
     var body: some View {
-        Image("RedCircle")
-            .resizable()
-            .frame(width: 20, height: 20)
-            .scaledToFit()
-            .opacity(0.5)
+        ZStack{
+           // Image(flame.fill)
+            Image("RedCircle")
+                .resizable()
+                .frame(width: 20, height: 20)
+                .scaledToFit()
+                .opacity(0.5)
+        }
     }
 }
 

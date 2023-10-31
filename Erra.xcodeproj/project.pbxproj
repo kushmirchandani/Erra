@@ -48,6 +48,7 @@
 		8FC2B2362AC8A87200D80CD6 /* package.json in Resources */ = {isa = PBXBuildFile; fileRef = 8FC2B2352AC8A87100D80CD6 /* package.json */; };
 		8FC2B2382AC8A89300D80CD6 /* package-lock.json in Resources */ = {isa = PBXBuildFile; fileRef = 8FC2B2372AC8A89100D80CD6 /* package-lock.json */; };
 		8FC2B23A2AC8A89900D80CD6 /* firebase.json in Resources */ = {isa = PBXBuildFile; fileRef = 8FC2B2392AC8A89800D80CD6 /* firebase.json */; };
+		8FE030162AF1682800987806 /* PredictionAlgorithm .swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FE030152AF1682800987806 /* PredictionAlgorithm .swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -114,6 +115,7 @@
 		8FC2B2352AC8A87100D80CD6 /* package.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = package.json; sourceTree = "<group>"; };
 		8FC2B2372AC8A89100D80CD6 /* package-lock.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "package-lock.json"; sourceTree = "<group>"; };
 		8FC2B2392AC8A89800D80CD6 /* firebase.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = firebase.json; sourceTree = "<group>"; };
+		8FE030152AF1682800987806 /* PredictionAlgorithm .swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PredictionAlgorithm .swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -252,6 +254,7 @@
 			isa = PBXGroup;
 			children = (
 				8F3D0CE12AB6231100AE2AB0 /* MapView.swift */,
+				8FE030152AF1682800987806 /* PredictionAlgorithm .swift */,
 			);
 			path = "Components ";
 			sourceTree = "<group>";
@@ -454,6 +457,7 @@
 				6D0C6F852A59B401004846AA /* HomeView.swift in Sources */,
 				8FB9A66B2AA02649004A610D /* Onboarding2.swift in Sources */,
 				6D0EA0262A6064A200933D09 /* ErrorLogView.swift in Sources */,
+				8FE030162AF1682800987806 /* PredictionAlgorithm .swift in Sources */,
 				8F3D0CE42AB624E000AE2AB0 /* LoadingView.swift in Sources */,
 				8F3D0CDF2AB5F9C700AE2AB0 /* Placeholder.swift in Sources */,
 			);
