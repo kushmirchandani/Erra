@@ -11,10 +11,18 @@ import FirebaseAuth
 import FirebaseCore
 import CoreData
 
+
+
 class AppDelegate: NSObject, UIApplicationDelegate {
+    
+
+    
+    
     func application(_ application: UIApplication,
                    didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey : Any]? = nil) -> Bool {
         FirebaseApp.configure()
+        
+        let db = Database.database(url: "https://erra-swift-default-rtdb.firebaseio.com/")
         return true
     }
 }
@@ -26,6 +34,8 @@ struct ErraApp: App {
     
     // Firebase setup can be here, like in your AppDelegate.
     @UIApplicationDelegateAdaptor(AppDelegate.self) var delegate
+    
+  
     
     var body: some Scene {
         WindowGroup {
