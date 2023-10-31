@@ -12,19 +12,19 @@ struct LoadingView: View {
 
     var body: some View {
         ZStack {
-            Color(.systemBackground) // Use system background color
+            Color(.systemBackground)
 
             VStack {
                 Spacer()
 
-                Image("CenteredLogo") // Replace "Logo" with the name of your asset
+                Image("CenteredLogo")
                     .resizable()
                     .aspectRatio(contentMode: .fit)
-                    .frame(width: 240, height: 200) // Adjust the size as needed
-                    .scaleEffect(isPulsing ? 1.1 : 1.0) // Apply pulsing animation
+                    .frame(width: 240, height: 200)
+                    .scaleEffect(isPulsing ? 1.1 : 1.0)
                     .animation(
-                        Animation.easeInOut(duration: 1.0) // Adjust the animation duration as needed
-                            .repeatForever(autoreverses: true) // Make it pulse continuously
+                        Animation.easeInOut(duration: 1.0)
+                            .repeatForever(autoreverses: true) //pulse continuosly
                     )
                     
 
@@ -33,7 +33,7 @@ struct LoadingView: View {
         }
         .edgesIgnoringSafeArea(.all)
         .onAppear() {
-            isPulsing.toggle() // Start the animation when the view appears
+            isPulsing.toggle() // when view appears
         }
     }
 }

@@ -113,7 +113,7 @@ struct Onboarding2: View {
                             var signUpCompleted : Bool = false
 
                                 if success {
-                                    // Fetching user UID for the button
+                                    // fetching user uid for the button
                                     if let user = Auth.auth().currentUser {
                                         let uid = user.uid
                                         viewModel2.nameFunc(forUser: uid) { success in
@@ -184,7 +184,7 @@ final class Login1ViewModel: ObservableObject {
             return
         }
         
-        // Call createUser from AuthenticationManager with a completion handler
+        // creating user login creds/profile
         AuthenticationManager.shared.createUser(email: email, password: password) { result in
             switch result {
             case .success:
@@ -215,7 +215,7 @@ final class NameViewModel: ObservableObject {
         Task {
             do {
                 let name1 = firstName + " " + lastName
-                try await DataManager.shared.addName(name: name1, id: uid)
+                try await DataManager.shared.addName(name: name1, id: uid) //adding name to user profile/firebase
                 
                 print("Success")
                 completion(true)
@@ -235,7 +235,7 @@ final class CoreDataVM: ObservableObject {
     }
     
     func updateOnboardingStatus(forUser uid: String) {
-        // Fetch and update the Onboarding entity
+        // fetching and updating  Onboarding entity
         let fetchRequest: NSFetchRequest<Onboarding> = Onboarding.fetchRequest()
         fetchRequest.predicate = NSPredicate(format: "uniqueIdentifier == %@", uid)
         
@@ -243,10 +243,10 @@ final class CoreDataVM: ObservableObject {
         do {
             let onboardingEntities = try managedObjectContext.fetch(fetchRequest)
             if let onboardingEntity = onboardingEntities.first {
-                // Update the attribute
+                // attribute updated
                 onboardingEntity.isOnboardingCompleted = true
 
-                // Save managed object context to persist change
+                //  persist
                 try managedObjectContext.save()
             }
         } catch {

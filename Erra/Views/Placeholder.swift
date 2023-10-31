@@ -141,12 +141,12 @@ final class LoginViewModel: ObservableObject {
             return
         }
         
-        // Call login from AuthenticationManager with a completion handler
+  //login func stuff
         AuthenticationManager.shared.login(email: email, password: password) { result in
             switch result {
             case .success(let authDataResultModel):
                 print("Success")
-                // You can use authDataResultModel here if needed
+                
                 completion(true)
             case .failure(let error):
                 print("Error: \(error)")

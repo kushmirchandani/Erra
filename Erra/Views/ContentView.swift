@@ -32,6 +32,7 @@ struct ContentView: View {
     @AppStorage("addressCompleted") var addressCompleted: Bool?
     @AppStorage("signUpCompleted") var signUpCompleted: Bool?
     
+    //logic; i dont even know what to say about this lol
     var body: some View {
         ZStack {
             if authViewModel.isSignedIn {

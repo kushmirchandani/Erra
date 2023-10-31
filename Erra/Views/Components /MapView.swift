@@ -17,9 +17,9 @@ class UserAddress: Identifiable, MapAnnotation1 {
     var address: String
     var coordinate: CLLocationCoordinate2D
     
-    // Function to geocode the address and update the coordinate
+    // geocode address
     func geocode(completion: @escaping () -> Void) {
-        DataManager.shared.fetchAddress1 { [weak self] formattedAddress in
+        DataManager.shared.fetchAddress1 { [weak self] formattedAddress in  //getting user address
             guard let self = self else {
                 completion()
                 return
@@ -27,13 +27,13 @@ class UserAddress: Identifiable, MapAnnotation1 {
 
             if let formattedAddress = formattedAddress {
                 let geocoder = CLGeocoder()
-                geocoder.geocodeAddressString(formattedAddress) { placemarks, error in
+                geocoder.geocodeAddressString(formattedAddress) { placemarks, error in    //geocode func
                     if let error = error {
                         print("Geocoding error: \(error.localizedDescription)")
                     }
 
                     if let location = placemarks?.first?.location {
-                        self.coordinate = location.coordinate
+                        self.coordinate = location.coordinate                //asign coordinate to var
                     }
 
                     completion()
@@ -50,7 +50,7 @@ class UserAddress: Identifiable, MapAnnotation1 {
     init(name: String, address: String) {
         self.name = name
         self.address = address
-        self.coordinate = CLLocationCoordinate2D(latitude: 0, longitude: 0) // Default coordinate
+        self.coordinate = CLLocationCoordinate2D(latitude: 0, longitude: 0)
     }
     
     
@@ -73,7 +73,7 @@ struct CustomAnnotationView: View {
     }
 }
 
-//fires calss
+//how fires are going to be stored for mapview
 
 class FireLocation: Identifiable, MapAnnotation1 {
     var id = UUID()
@@ -94,7 +94,7 @@ class FireLocation: Identifiable, MapAnnotation1 {
 }
 
 
-//protocol//////
+//annotations protocol//////
 
 
 protocol MapAnnotation1: Identifiable  where ID == UUID{
@@ -116,12 +116,15 @@ extension FireLocation {
 }
 
 
+//basically the usuable mymapannotations1
 
-struct MyMapAnnotation1: Identifiable, MapAnnotation1 {
+struct MyMapAnnotation2: Identifiable, MapAnnotation1 {
     var id: UUID
     var coordinate: CLLocationCoordinate2D
     var title: String
 }
+
+
 //map view//////////////////////////////////////
 
 
@@ -131,12 +134,14 @@ struct MapView: View {
         span: MKCoordinateSpan(latitudeDelta: 0.2, longitudeDelta: 0.2)
     )
 
-    // Sample user addresses
+
     @State private var userAddresses: [UserAddress] = []
     @State private var formattedAddress: String?
     @State private var fireLocations: [FireLocation] = []
     
-    @State private var myMapAnnotations: [MyMapAnnotation1] = []
+    @State private var myMapAnnotations: [MyMapAnnotation2] = []
+    
+    
     // Filter out addresses without coordinates
     var filteredAddresses: [UserAddress] {
         return userAddresses.filter { $0.coordinate != nil }
@@ -158,27 +163,27 @@ struct MapView: View {
             
             
             
-            //fetch fire locations
+            //fetch fire location --- iterate through realtime database to get lat and long for each fire and append it to mymapannotations2
             
             let ref = Database.database().reference().child("fires/-Ni0m_W6vQOdUreW6M2C")
               
               ref.observe(.childAdded, with: { snapshot in
                   if let data = snapshot.value as? [String: Any] {
-                      print("PLEASEEEEE")
+                      print("PLEASEEEEE WORK")
                       if let latitudeString = data["latitude"] as? String,
                       let longitudeString = data["longitude"] as? String {
                       print("Latitude String: (latitudeString), Longitude String: (longitudeString)")
                       if let latitude = Double(latitudeString),
                       let longitude = Double(longitudeString) {
-                      print("Latitude: (latitude), Longitude: (longitude)")
+                      print("Latitude Actual: (latitude), Longitude Actuale: (longitude)")
 
-                                      // Create a FireLocation object
+                        
                                       let newFireLocation = FireLocation(name: "Fire Location", latitude: latitude, longitude: longitude)
 
-                                      // Create a corresponding MyMapAnnotation
-                                      let annotation = MyMapAnnotation1(id: newFireLocation.id, coordinate: newFireLocation.coordinate, title: newFireLocation.title)
+                                      // corresponding mymapannotation
+                                      let annotation = MyMapAnnotation2(id: newFireLocation.id, coordinate: newFireLocation.coordinate, title: newFireLocation.title)
 
-                                      // Append the annotation to myMapAnnotations
+                                      // add it to annotations thing
                                       myMapAnnotations.append(annotation)
                                   }
                               }
@@ -189,25 +194,24 @@ struct MapView: View {
             
             
             
-            // Fetch the formatted address and assign it to the @State property
+            // fetch formatted address from firestore database
                      DataManager.shared.fetchAddress1 { fetchedAddress in
                          formattedAddress = fetchedAddress
-                         
-                         // Append a new UserAddress with the fetched address
+                         // formated added to useraddress
                          if let formattedAddress = formattedAddress {
                              let newUserAddress = UserAddress(name: "New Address", address: formattedAddress)
                              userAddresses.append(newUserAddress)
                          }
                      }
             
-            // Geocode the user addresses to obtain coordinates
-            var geocodeCount = 0 // To keep track of the number of geocoding requests
+            // Geocode user address
+            var geocodeCount = 0 //  number of geocoding requests
             for index in userAddresses.indices {
                 userAddresses[index].geocode {
                     geocodeCount += 1
                     if geocodeCount == userAddresses.count {
-                        // All geocoding requests are completed
-                        // Update the map region if needed
+                        // all geocoding requests are completed
+                        
                     }
                 }
             }

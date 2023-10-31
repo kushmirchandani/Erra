@@ -23,7 +23,7 @@ struct Onboarding3: View {
     
     var body: some View {
         GeometryReader { geometry in
-            NavigationView { // Wrap your view inside a NavigationView
+            NavigationView {
                 ZStack {
                     VStack {
                         Image("onboardFire")
@@ -42,7 +42,7 @@ struct Onboarding3: View {
                             .frame(width: UIScreen.main.bounds.width * 0.90, height: UIScreen.main.bounds.height * 0.30)
                             .foregroundColor(.white)
                             .cornerRadius(8)
-                        // Fix static
+                     
                         
                         Image("Logo")
                             .resizable()
@@ -51,6 +51,7 @@ struct Onboarding3: View {
                             .offset(x: 70, y: -50)
                         
                         
+                        //address fields
                         VStack {
                             Text("Add a Primary Address")
                                 .font(Font.custom("Inter-Regular", size: 24))
@@ -152,7 +153,7 @@ final class AddressViewModel: ObservableObject {
         
         Task {
             do {
-                
+                //adding address to user profile/firestore database
                 try await DataManager.shared.addAddress1(address: primary, city: city, country: country, id: uid)
                 
                 print("Success")
@@ -175,17 +176,17 @@ final class CoreDataVM1: ObservableObject {
     }
     
     func updateAddressStatus(forUser uid: String) {
-        // Fetch and update the Onboarding entity
+        // fetching and updating  Onboarding entity
         let fetchRequest: NSFetchRequest<Onboarding> = Onboarding.fetchRequest()
         fetchRequest.predicate = NSPredicate(format: "uniqueIdentifier == %@", uid)
 
         do {
             let onboardingEntities = try managedObjectContext.fetch(fetchRequest)
             if let onboardingEntity = onboardingEntities.first {
-                // Update the attribute
+                // attribute updated
                 onboardingEntity.isAddressCompleted = true
 
-                // Save managed object context to persist change
+                // persist
                 try managedObjectContext.save()
             }
         } catch {

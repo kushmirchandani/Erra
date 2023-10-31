@@ -12,7 +12,6 @@ import FirebaseCore
 import CoreData
 
 
-
 class AppDelegate: NSObject, UIApplicationDelegate {
     
 
@@ -29,10 +28,10 @@ class AppDelegate: NSObject, UIApplicationDelegate {
 
 @main
 struct ErraApp: App {
-    // Step 3: Create an instance of NSPersistentContainer for your Core Data model.
+   
     let persistenceController = PersistenceController.shared
     
-    // Firebase setup can be here, like in your AppDelegate.
+   
     @UIApplicationDelegateAdaptor(AppDelegate.self) var delegate
     
   

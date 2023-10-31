@@ -7,6 +7,10 @@
 
 import SwiftUI
 import Firebase
+import FirebaseAuth
+import FirebaseFirestore
+import Foundation
+
 
 class DataManager: ObservableObject {
     
