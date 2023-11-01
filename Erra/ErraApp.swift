@@ -21,7 +21,7 @@ class AppDelegate: NSObject, UIApplicationDelegate {
                    didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey : Any]? = nil) -> Bool {
         FirebaseApp.configure()
         
-        let db = Database.database(url: "https://erra-swift-default-rtdb.firebaseio.com/")
+        let db = Database.database(url: "database url")
         return true
     }
 }
