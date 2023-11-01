@@ -30,6 +30,7 @@
 		6D0EA0172A5AD00D00933D09 /* GoogleSignIn in Frameworks */ = {isa = PBXBuildFile; productRef = 6D0EA0162A5AD00D00933D09 /* GoogleSignIn */; };
 		6D0EA0192A5AD00D00933D09 /* GoogleSignInSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 6D0EA0182A5AD00D00933D09 /* GoogleSignInSwift */; };
 		6D0EA01B2A5B1EE000933D09 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D0EA01A2A5B1EE000933D09 /* SettingsView.swift */; };
+		8F188DDC2AF21CFA002E3702 /* SwiftUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F188DDB2AF21CFA002E3702 /* SwiftUIView.swift */; };
 		8F27B7DA2A6041A7007C149B /* AuthenticantionManager .swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F27B7D92A6041A7007C149B /* AuthenticantionManager .swift */; };
 		8F3D0CDF2AB5F9C700AE2AB0 /* Placeholder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F3D0CDE2AB5F9C700AE2AB0 /* Placeholder.swift */; };
 		8F3D0CE22AB6231100AE2AB0 /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F3D0CE12AB6231100AE2AB0 /* MapView.swift */; };
@@ -84,6 +85,7 @@
 		6D0EA0142A5AC85500933D09 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		6D0EA01A2A5B1EE000933D09 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		6D0EA01C2A5B2F7700933D09 /* Erra.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Erra.entitlements; sourceTree = "<group>"; };
+		8F188DDB2AF21CFA002E3702 /* SwiftUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUIView.swift; sourceTree = "<group>"; };
 		8F27B7D92A6041A7007C149B /* AuthenticantionManager .swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AuthenticantionManager .swift"; sourceTree = "<group>"; };
 		8F3D0CDE2AB5F9C700AE2AB0 /* Placeholder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Placeholder.swift; sourceTree = "<group>"; };
 		8F3D0CE12AB6231100AE2AB0 /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
@@ -229,6 +231,7 @@
 				8F3D0CDE2AB5F9C700AE2AB0 /* Placeholder.swift */,
 				8F3D0CE32AB624E000AE2AB0 /* LoadingView.swift */,
 				6D0C6F532A58810D004846AA /* ContentView.swift */,
+				8F188DDB2AF21CFA002E3702 /* SwiftUIView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -437,6 +440,7 @@
 			files = (
 				6D0EA01B2A5B1EE000933D09 /* SettingsView.swift in Sources */,
 				8FB9A6562AA0057E004A610D /* Onboarding1.swift in Sources */,
+				8F188DDC2AF21CFA002E3702 /* SwiftUIView.swift in Sources */,
 				8F6AC9282AA3839400F90966 /* UserIDs.swift in Sources */,
 				8F6AC9312AA6826900F90966 /* Ignis.xcdatamodeld in Sources */,
 				8F27B7DA2A6041A7007C149B /* AuthenticantionManager .swift in Sources */,

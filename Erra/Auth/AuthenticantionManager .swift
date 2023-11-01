@@ -7,6 +7,9 @@
 
 import Foundation
 import FirebaseAuth
+import Firebase
+import FirebaseCore
+import FirebaseFirestore
 
 struct AuthDataResultModel {
     let uid: String

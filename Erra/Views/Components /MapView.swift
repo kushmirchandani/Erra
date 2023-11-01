@@ -81,7 +81,7 @@ class FireLocation: Identifiable, MapAnnotation1 {
     var latitude: Double
     var longitude: Double
     
-    // Define the coordinate property here as a stored property
+    
     var coordinate: CLLocationCoordinate2D {
         return CLLocationCoordinate2D(latitude: latitude, longitude: longitude)
     }

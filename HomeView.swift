@@ -10,6 +10,7 @@ struct HomeView: View {
     @StateObject private var LogoutVM1 = LogoutVM()
     @State private var isSettingsViewActive = false
     @State private var isPlaceholderPresented = false
+    @State private var isPercentageChangeViewActive = false
     
     var body: some View {
         VStack(){
@@ -35,6 +36,20 @@ struct HomeView: View {
                     }
                     .fullScreenCover(isPresented: $isSettingsViewActive){
                         SettingsView()
+                        
+                    }
+                
+                
+                Button(action: {
+                    isPercentageChangeViewActive = true                     }) {
+                        Image(systemName: "person.circle")
+                            .font(.system(size: 30))
+                            .foregroundStyle(.black)
+                            .frame(width: 100, height: 100)
+                            .offset(y: -10)
+                    }
+                    .fullScreenCover(isPresented: $isPercentageChangeViewActive){
+                        PercentageChangeView()
                         
                     }
             }
