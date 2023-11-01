@@ -6,7 +6,7 @@ import csv
 import json
 
 # Initialize Firebase Admin SDK
-cred = credentials.Certificate('erra-swift-firebase-adminsdk-ygqgr-90b273de1b.json')
+cred = credentials.Certificate('projFile.json')
 
 firebase_admin.initialize_app(cred)
 
@@ -28,7 +28,7 @@ def apiCall():
 
 
     # Set your map key
-    MAP_KEY = '1dd3a8cdf783bf9b0ffead635219fd99'
+    MAP_KEY = 'mapkey'
 
     # Define the API URL with the map key
     url = 'https://firms.modaps.eosdis.nasa.gov/api/area/csv/' + MAP_KEY + '/VIIRS_NOAA20_NRT/-160,23,-66,71/1'
