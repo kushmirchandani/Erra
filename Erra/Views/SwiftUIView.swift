@@ -1,9 +1,4 @@
-//
-//  SwiftUIView.swift
-//  Erra
-//
-//  Created by Heidi Schultz on 11/1/23.
-//
+
 import SwiftUI
 import Firebase
 

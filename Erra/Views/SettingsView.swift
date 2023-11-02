@@ -1,9 +1,4 @@
-//
-//  SettingsView.swift
-//  Erra
-//
-//  Created by Kush Mirchandani on 7/9/23.
-//
+
 
 import SwiftUI
 

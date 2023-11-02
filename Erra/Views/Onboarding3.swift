@@ -1,9 +1,4 @@
-//
-//  Onboarding3.swift
-//  Erra
-//
-//  Created by Heidi Schultz on 9/1/23.
-//
+
 /*
 This is the add address page
  

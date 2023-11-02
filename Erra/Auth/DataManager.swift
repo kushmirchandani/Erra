@@ -1,9 +1,4 @@
-//
-//  DataManager.swift
-//  Erra
-//
-//  Created by Heidi Schultz on 9/2/23.
-//
+
 
 import SwiftUI
 import Firebase

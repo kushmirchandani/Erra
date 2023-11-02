@@ -1,9 +1,4 @@
-//
-//  HomeView.swift
-//  Erra
-//
-//  Created by Kush Mirchandani on 7/8/23.
-//
+
 
 import SwiftUI
 struct HomeView: View {

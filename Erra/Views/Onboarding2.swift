@@ -1,9 +1,4 @@
-//
-//  Onboarding2.swift
-//  Erra
-//
-//  Created by Heidi Schultz on 8/30/23.
-//
+
 
 
 import SwiftUI

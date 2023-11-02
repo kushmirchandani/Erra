@@ -1,9 +1,3 @@
-//
-//  MapView.swift
-//  Erra
-//
-//  Created by Heidi Schultz on 9/16/23.
-//
 
 import SwiftUI
 import MapKit

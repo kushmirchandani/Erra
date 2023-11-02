@@ -1,9 +1,4 @@
-//
-//  AuthenticantionManager .swift
-//  Erra
-//
-//  Created by Heidi Schultz on 7/13/23.
-//
+
 
 import Foundation
 import FirebaseAuth
