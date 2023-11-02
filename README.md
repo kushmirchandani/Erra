@@ -1,5 +1,8 @@
 # Ignis
 
+
+![IMG_4964](https://github.com/heidischultz/Ignis/assets/99668295/1a73f94a-1901-4e29-b91b-671c2fc0a9af)
+
 Ignis is a mobile app designed to assist people detect and track wildfires while promoting fire safety. By acting as a centralized hub, Ignis notifies users of potential wildfire threats to their home. Additionally, Ignis offers a fire plan feature that provides a secure space for families and loved ones to collaborate on fire safety planning. Ignis uses a physics-driven algorithm that issues a percentage chance on whether an address will be impacted, helping users make informed decisions quickly. Ignis provides customized information on fire risks and safety measures based on the user's location.
 
 
