@@ -66,9 +66,9 @@ struct CustomAnnotationView: View {
            // Image(flame.fill)
             Image("RedCircle")
                 .resizable()
-                .frame(width: 20, height: 20)
+                .frame(width: 30, height: 30)
                 .scaledToFit()
-                .opacity(0.5)
+                
         }
     }
 }

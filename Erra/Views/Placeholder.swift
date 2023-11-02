@@ -103,7 +103,7 @@ struct Placeholder: View {
                     .resizable()
                     .frame(width:200,height:200)
                     .aspectRatio(contentMode: .fit)
-                    .position(x:290, y: 700)
+                    .position(x:150, y: 750)
                 
               
                 // sign in button
