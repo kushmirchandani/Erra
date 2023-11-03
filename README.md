@@ -35,8 +35,9 @@ Ignis is a mobile app designed to assist people detect and track wildfires while
 * [Google Cloud Functions](https://cloud.google.com/functions#) - Cloud functions used for deploying/scheduling reoccurring API call  
 
 
-## Contributers 
+## Contributors 
 
+Kush Mirchandani - UI and geocoding help
 
 ## Acknowledgments
 
