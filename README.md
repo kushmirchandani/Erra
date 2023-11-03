@@ -1,6 +1,6 @@
 # Ignis
 
-![IMG_1997](https://github.com/heidischultz/Ignis/assets/99668295/a3d18457-84ab-47a7-a0c1-1661f5c432f8)
+
 
 
 
@@ -41,9 +41,11 @@ Kush Mirchandani - UI and geocoding help
 
 ## Acknowledgments
 
-* Hat tip to anyone whose code was used
-* Inspiration
-* etc
+*Melissa Fernandez
+*Swiftful Thinking Youtube Tutorials 
+*Sean Alan Youtube YouTube Tutorials
+*StackOverFlow
+
 
 
 
