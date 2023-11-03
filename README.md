@@ -38,7 +38,7 @@ Ignis is a mobile app designed to assist people detect and track wildfires while
 
 ## Contributors 
 
-Kush Mirchandani - UI and geocoding help
+Kush Mirchandani - UI, design, and geocoding help
 
 ## Acknowledgments
 
