@@ -25,11 +25,17 @@ Ignis is a mobile app designed to assist people detect and track wildfires while
  I have been constantly tweaking my code and adding new features, so as of now, the calculation of percentage risk has some bugs. However, I plan on continuing to improve/fix my code
  
 ## Fire Prediction Flow Chart
+While reading the flow chart, keep in mind:
+- **"fires"** is the JSON node that all of the newly fetched fires are stored under
+- **"fires1"** is the JSON node that all of the 2-hour-old fetches fires are stored under
+- **New fire** refers to any fire that is in the "fires" node
+- **fireLocations[]** is an array with all of the latitudes and longitudes of every fire stored in *"fires"*
+- **fireLocations1[]** is an array with all of the latitudes and longitudes of every fire stored in *"fires1"*
 
-![ODDDD](https://github.com/heidischultz/Ignis/assets/99668295/1be11f4a-5679-4d29-8ed9-0a663b49335c)
 
 
- 
+![okokokokt](https://github.com/heidischultz/Ignis/assets/99668295/7346a935-293f-4fa8-9de2-13c0455b5371)
+
 
 
 ## Built With
