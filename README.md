@@ -8,18 +8,25 @@
 Ignis is a mobile app designed to assist people detect and track wildfires while promoting fire safety. By acting as a centralized hub, Ignis notifies users of potential wildfire threats to their home. Additionally, Ignis offers a fire plan feature that provides a secure space for families and loved ones to collaborate on fire safety planning. Ignis uses a physics-driven algorithm that issues a percentage chance on whether an address will be impacted, helping users make informed decisions quickly. Ignis provides customized information on fire risks and safety measures based on the user's location.
 
 
-## Fire Prediction Algorithm 
+## Fire Prediction Algorithm Diagrams
 *(Ignis1/Erra/Views/Components /PredictionAlgorithm .swift)*
 
 
+![2mi](https://github.com/heidischultz/Ignis/assets/99668295/8cce7357-5b21-43bc-8d9d-11c25a342830)
+
+
  
-- isWithinCircle (function) iterates through each fire's latitude and longitude in the old fire dataset (2 hours old) and draws a circle with a 2mi radius around it.
- - Then the same function searches for any coordinate in the new fire dataset that falls within the defined 2mi interaction threshold
- - If there is another fire within the interaction threshold, the distance between the two fires is returned. If there is no change in the movement of a fire, 0.0 is returned
- 
- - Next, a line is "drawn" from the old fire location to the new fire location. This line then continues past the new fire location by 50 miles
- - A cone is then made with a radius of 20 mi and height of 50 mi
- - If the address falls within that cone, then a percentage risk is assigned based of how far the address is from the tip of the cone.
+- isWithinCircle() iterates through each fire's latitude and longitude in the old fire dataset (which is 2 hours old) and creates a 2-mile radius circle around each of these fire locations.
+
+- Subsequently, the function checks for any coordinates in the new fire dataset that fall within the defined 2-mile interaction threshold of every old fire.
+
+- If another, new, fire is found within this interaction threshold, the function calculates the distance between the two fires. If there is no change in the movement of a fire, it returns a distance of 0.0.
+
+- After determining the distance, the function "draws" a vector from the old fire location to the new fire location. This line extends 50 miles past the new fire location.
+
+- A cone is then formed with a radius of 20 miles and a height of 50 miles. The tip of the cone is positioned at the same angle as the vector drawn from the old fire location to the new fire location, with the tip of the cone touching the new fire location. This arrangement ensures that the cone encompasses the area where the fire may potentially spread, with its tip aligned to the direction of fire movement from the old fire location to the new fire location.
+
+- Then isAddressWithinCone() checks whether the user's address falls within the cone. If the address is within the cone, it calculates a percentage risk based on the distance of the address from the tip of the cone.
 
  **DISCLAIMER**
  I have been constantly tweaking my code and adding new features, so as of now, the calculation of percentage risk has some bugs. However, I plan on continuing to improve/fix my code
@@ -46,7 +53,13 @@ While reading the flow chart, keep in mind:
 * [MapKit](https://developer.apple.com/documentation/mapkit/) - Map Framework
 * [Firebase Firestore](https://firebase.google.com/docs/firestore) - Cloud database used for storing user info/authentication
 * [Firebase Realtime](https://firebase.google.com/docs/database) - Cloud realtime database used for storing API data
-* [Google Cloud Functions](https://cloud.google.com/functions#) - Cloud functions used for deploying/scheduling reoccurring API call  
+* [Google Cloud Functions](https://cloud.google.com/functions#) - Cloud functions used for deploying/scheduling reoccurring API call
+* [CoreLocation](https://developer.apple.com/documentation/corelocation) - Geocoding
+* [Foundation](https://developer.apple.com/documentation/foundation) - Base Framework
+* [UIKit](https://developer.apple.com/documentation/uikit) - Frontend Framework
+* [Requests](https://pypi.org/project/requests/) - HTTP requests Python library
+* [Csv](https://docs.python.org/3/library/csv.html) - CSV tools, standard Python library
+* [JSON](https://docs.python.org/3/library/json.html) - JSON tools, standard Python library
 
 
 ## Contributors 
@@ -55,10 +68,10 @@ Kush Mirchandani - UI, design, and geocoding help
 
 ## Acknowledgments
 
-*Melissa Fernandez*
-*Swiftful Thinking Youtube Tutorials*
-*Sean Alan Youtube YouTube Tutorials*
-*StackOverFlow*
+*Melissa Fernandez
+*Swiftful Thinking Youtube Tutorials
+*Sean Alan Youtube YouTube Tutorials
+*StackOverFlow
 
 
 
