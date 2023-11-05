@@ -18,6 +18,16 @@ Ignis is a mobile app designed to assist people detect and track wildfires while
  - Next, a line is "drawn" from the old fire location to the new fire location. This line then continues past the new fire location by 50 miles
  - A cone is then made with a radius of 20 mi and height of 50 mi
  - If the address falls within that cone, then a percentage risk is assigned based of how far the address is from the tip of the cone.
+
+
+## Fire Prediction Flow Chart
+
+<img width="800" alt="Screenshot 2023-11-05 at 4 02 31 PM" src="https://github.com/heidischultz/Ignis/assets/99668295/adccef1a-4ee0-4412-a2e1-a807cd5a1564">
+<img width="800" al<img width="800" alt="Screenshot 2023-11-05 at 4 03 51 PM" src="https://github.com/heidischultz/Ignis/assets/99668295/f7fdb390-1660-4975-878f-e18197a56086">
+<img width="800" alt="Screenshot 2023-11-05 at 4 03 51 PM" src="https://github.com/heidischultz/Ignis/assets/99668295/a359a0f7-4f5a-4bf4-a4fe-a681f1adae9e">
+<img width="801" alt="Screenshot 2023-11-05 at 4 04 26 PM" src="https://github.com/heidischultz/Ignis/assets/99668295/04dd67fb-b5ea-45eb-9f8e-29005db364a4">
+<img width="800" alt="Screenshot 2023-11-05 at 4 04 47 PM" src="https://github.com/heidischultz/Ignis/assets/99668295/f7e44b7d-cb24-44cf-8a1c-4d2af53191c9">
+
  
  
  **DISCLAIMER**
@@ -42,10 +52,10 @@ Kush Mirchandani - UI, design, and geocoding help
 
 ## Acknowledgments
 
-*Melissa Fernandez
-*Swiftful Thinking Youtube Tutorials 
-*Sean Alan Youtube YouTube Tutorials
-*StackOverFlow
+*Melissa Fernandez*
+*Swiftful Thinking Youtube Tutorials*
+*Sean Alan Youtube YouTube Tutorials*
+*StackOverFlow*
 
 
 
