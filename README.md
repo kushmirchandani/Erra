@@ -22,13 +22,8 @@ Ignis is a mobile app designed to assist people detect and track wildfires while
 
 ## Fire Prediction Flow Chart
 
-<img width="800" alt="Screenshot 2023-11-05 at 4 02 31 PM" src="https://github.com/heidischultz/Ignis/assets/99668295/9dee6be7-ef29-43f1-a00d-99e74f9c5a43">
-<img width="800" alt="Screenshot 2023-11-05 at 4 03 07 PM" src="https://github.com/heidischultz/Ignis/assets/99668295/03400bfc-a6e9-47b0-8361-e05b5e95eb2f">
-<img width="800" alt="Screenshot 2023-11-05 at 4 03 51 PM" src="https://github.com/heidischultz/Ignis/assets/99668295/22c7358c-13d3-4528-80e5-9ee610cfe477">
-<img width="801" alt="Screenshot 2023-11-05 at 4 04 26 PM" src="https://github.com/heidischultz/Ignis/assets/99668295/be6be347-1942-4481-9858-22db7d3daac9">
-<img width="800" alt="Screenshot 2023-11-05 at 4 04 47 PM" src="https://github.com/heidischultz/Ignis/assets/99668295/58f14d1b-07ba-4fe5-aa50-32af6d2a29c7">
+![plssssss](https://github.com/heidischultz/Ignis/assets/99668295/ce43f775-02dc-465c-8f55-7eb886687f6e)
 
- 
  
  **DISCLAIMER**
  I have been constantly tweaking my code and adding new features, so as of now, the calculation of percentage risk has some bugs. However, I plan on continuing to improve/fix my code
