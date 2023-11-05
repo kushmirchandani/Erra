@@ -22,11 +22,11 @@ Ignis is a mobile app designed to assist people detect and track wildfires while
 
 ## Fire Prediction Flow Chart
 
-<img width="800" alt="Screenshot 2023-11-05 at 4 02 31 PM" src="https://github.com/heidischultz/Ignis/assets/99668295/adccef1a-4ee0-4412-a2e1-a807cd5a1564">
-<img width="800" al<img width="800" alt="Screenshot 2023-11-05 at 4 03 51 PM" src="https://github.com/heidischultz/Ignis/assets/99668295/f7fdb390-1660-4975-878f-e18197a56086">
-<img width="800" alt="Screenshot 2023-11-05 at 4 03 51 PM" src="https://github.com/heidischultz/Ignis/assets/99668295/a359a0f7-4f5a-4bf4-a4fe-a681f1adae9e">
-<img width="801" alt="Screenshot 2023-11-05 at 4 04 26 PM" src="https://github.com/heidischultz/Ignis/assets/99668295/04dd67fb-b5ea-45eb-9f8e-29005db364a4">
-<img width="800" alt="Screenshot 2023-11-05 at 4 04 47 PM" src="https://github.com/heidischultz/Ignis/assets/99668295/f7e44b7d-cb24-44cf-8a1c-4d2af53191c9">
+<img width="800" alt="Screenshot 2023-11-05 at 4 02 31 PM" src="https://github.com/heidischultz/Ignis/assets/99668295/9dee6be7-ef29-43f1-a00d-99e74f9c5a43">
+<img width="800" alt="Screenshot 2023-11-05 at 4 03 07 PM" src="https://github.com/heidischultz/Ignis/assets/99668295/03400bfc-a6e9-47b0-8361-e05b5e95eb2f">
+<img width="800" alt="Screenshot 2023-11-05 at 4 03 51 PM" src="https://github.com/heidischultz/Ignis/assets/99668295/22c7358c-13d3-4528-80e5-9ee610cfe477">
+<img width="801" alt="Screenshot 2023-11-05 at 4 04 26 PM" src="https://github.com/heidischultz/Ignis/assets/99668295/be6be347-1942-4481-9858-22db7d3daac9">
+<img width="800" alt="Screenshot 2023-11-05 at 4 04 47 PM" src="https://github.com/heidischultz/Ignis/assets/99668295/58f14d1b-07ba-4fe5-aa50-32af6d2a29c7">
 
  
  
