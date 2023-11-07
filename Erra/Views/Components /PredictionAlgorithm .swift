@@ -1,21 +1,20 @@
 /*
+
+Hello, MIT Maker Portfolio Reader(s)! Below is an overview of how the algorithm will work when called:
  
- Hello MIT Maker Portfolio reader(s)!
- 
- This is how the algorithim works:
- 
- - isWithinCircle (function) iterates through each fire's latitude and longitude in the old fire dataset (2 hours old) and draws a circle with a 2mi radius around it.
- - Then the same function searches for any coordinate in the new fire dataset that falls within the defined 2mi interaction threshold
- - If there is another fire within the interaction threshold, the distance between the two fires is returned. If there is no change in the movement of a fire, 0.0 is returned
- 
- - Next, a line is "drawn" from the old fire location to the new fire location. This line then continues past the new fire location by 50 miles
- - A cone is then made with a radius of 20 mi and height of 50 mi
- - If the address falls within that cone, then a percentage risk is assigned based of how far the address is from the tip of the cone.
- 
- 
- **DISCLAIMER**
- I have been constantly tweaking my code and adding new features, so as of now, the calculation of percentage risk has some bugs. However, I plan on continuing to improve/fix my code
- 
+isWithinCircle() iterates through each fire's latitude and longitude in the old fire dataset (which is 2 hours old) and creates a 2-mile radius circle around each of these fire locations.
+
+Subsequently, the function checks for any coordinates in the new fire dataset that fall within the defined 2-mile interaction threshold of every old fire.
+
+If another new fire is found within this interaction threshold, the function calculates the distance between the two fires. If there is no change in the movement of a fire, it returns a distance of 0.0.
+
+After determining the distance, the function "draws" a vector from the old fire location to the new fire location. This line extends 50 miles past the new fire location.
+
+A cone is then formed with a radius of 20 miles and a height of 50 miles. The tip of the cone is positioned at the same angle as the vector drawn from the old fire location to the new fire location, with the tip of the cone touching the new fire location. This arrangement ensures that the cone encompasses the area where the fire may potentially spread, with its tip aligned to the direction of fire movement from the old fire location to the new fire location.
+
+Then isAddressWithinCone() checks whether the user's address falls within the cone. If the address is within the cone, it calculates a percentage risk based on the distance of the address from the tip of the cone.
+
+DISCLAIMER I have been constantly tweaking my code and adding new features, so as of now, the calculation of percentage risk has some bugs. However, I plan on continuing to improve/fix my code 
  */
 
 
@@ -161,7 +160,7 @@ class User2: ObservableObject {
         return distanceInMiles <= radius
     }
     
-    func calculateVector(_ source: FireLocation1, _ destination: FireLoc) -> (dx: Double, dy: Double) {
+    func calculateVector(_ source: FireLoc, _ destination: FireLocation1) -> (dx: Double, dy: Double) {
         let dx = (destination.longitude - source.longitude).degreesToRadians
         let dy = (destination.latitude - source.latitude).degreesToRadians
         return (dx, dy)
@@ -173,7 +172,7 @@ class User2: ObservableObject {
         
         let vectorAngle = atan2(vector.dy, vector.dx)
         
-        
+        //make suere angle is 0 < theta < 2pi
         let vectorAngleNormalized = vectorAngle < 0 ? vectorAngle + (2 * .pi) : vectorAngle
         
       
@@ -206,3 +205,4 @@ class User2: ObservableObject {
         }
     }
 }
+
