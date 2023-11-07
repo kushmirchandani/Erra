@@ -1,4 +1,8 @@
 
+/*
+    The button showcases how the algorithm is supposed to be called
+
+*/
 import SwiftUI
 import Firebase
 
@@ -6,7 +10,7 @@ struct PercentageChangeView: View {
     @State var percentageChange: Double = 0.0
     @State private var fireLocations: [User2.FireLoc] = []
     @State private var address2: String = ""
-
+    @State private var vector: (dx: Double, dy: Double) = (dx: 0.0, dy: 0.0)
 
     var body: some View {
         VStack {
@@ -28,12 +32,14 @@ struct PercentageChangeView: View {
                             
                             user2.fetchFireLocations1 { fireLocations1 in
                                 //print(" i love soccer")
-                                
-                                
                                
-                                let vector = user2.calculateVector(fireLocations1[0], fireLoc1[0])
-                                //print("tester")
-                            
+                                var circle = user2.isWithinCircle(fireLoc1[0], fireLocations1[0], radius: radius)
+                                if circle {
+                                    
+                                    vector = user2.calculateVector(fireLoc1[0], fireLocations1[0])
+                                    //print("tester")
+                                }
+                                
                                 self.percentageChange = user2.calculatePercentageChange(address: address, vector: vector, addressLatitude: fireLocations1[0].latitude, addressLongitude: fireLocations1[0].longitude, radius: radius)
                                 
                             }
@@ -49,6 +55,14 @@ struct PercentageChangeView: View {
             
         }
     }
+}
+
+struct PercentageChangeView1: PreviewProvider {
+    static var previews: some View {
+        PercentageChangeView()
+    }
+}
+
 }
 
 struct PercentageChangeView1: PreviewProvider {
