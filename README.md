@@ -12,12 +12,13 @@ Ignis is a mobile app designed to assist people detect and track wildfires while
 
 
 ## Fire Prediction Algorithm
+*(Ignis1/Erra/Views/Components /PredictionAlgorithm .swift)*
 
 - isWithinCircle() iterates through each fire's latitude and longitude in the old fire dataset (which is 2 hours old) and creates a 2-mile radius circle around each of these fire locations.
 
 - Subsequently, the function checks for any coordinates in the new fire dataset that fall within the defined 2-mile interaction threshold of every old fire.
 
-- If another, new, fire is found within this interaction threshold, the function calculates the distance between the two fires. If there is no change in the movement of a fire, it returns a distance of 0.0.
+- If another new fire is found within this interaction threshold, the function calculates the distance between the two fires. If there is no change in the movement of a fire, it returns a distance of 0.0.
 
 - After determining the distance, the function "draws" a vector from the old fire location to the new fire location. This line extends 50 miles past the new fire location.
 
@@ -28,7 +29,6 @@ Ignis is a mobile app designed to assist people detect and track wildfires while
  **DISCLAIMER**
  I have been constantly tweaking my code and adding new features, so as of now, the calculation of percentage risk has some bugs. However, I plan on continuing to improve/fix my code
 ## Fire Prediction Algorithm Diagrams
-*(Ignis1/Erra/Views/Components /PredictionAlgorithm .swift)*
 
 
 ![2mi](https://github.com/heidischultz/Ignis/assets/99668295/8cce7357-5b21-43bc-8d9d-11c25a342830)
@@ -48,6 +48,10 @@ While reading the flow chart, keep in mind:
 
 ![okokokokt](https://github.com/heidischultz/Ignis/assets/99668295/7346a935-293f-4fa8-9de2-13c0455b5371)
 
+## Fire Safety Plan
+According to the American Red Cross, only 26 percent of families have developed a fire escape plan. Ignis addresses this issue. Ignis allows families to quickly create and distribute a fire escape plan to their family members. With wildfires and house fires becoming more common, a fire safety/escape plan is a necessity.
+
+![IMG_3368](https://github.com/heidischultz/Ignis/assets/99668295/35f688c1-23f5-4a4e-8177-3a1a004643b6)
 
 
 ## Built With
