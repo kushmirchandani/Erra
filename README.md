@@ -51,7 +51,9 @@ While reading the flow chart, keep in mind:
 ## Fire Safety Plan
 According to the American Red Cross, only 26 percent of families have developed a fire escape plan. Ignis addresses this issue. Ignis allows families to quickly create and distribute a fire escape plan to their family members. With wildfires and house fires becoming more common, a fire safety/escape plan is a necessity.
 
-![IMG_3368](https://github.com/heidischultz/Ignis/assets/99668295/35f688c1-23f5-4a4e-8177-3a1a004643b6)
+
+<img src="https://your-image-url.type](https://github.com/heidischultz/Ignis/assets/99668295/35f688c1-23f5-4a4e-8177-3a1a004643b6" width="250" height="400">.
+
 
 
 ## Built With
