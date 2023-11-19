@@ -1,0 +1,6 @@
+{
+  "rules": {
+   ".read": true, // Allow read access to authenticated users
+    ".write": true, 
+  }
+}
