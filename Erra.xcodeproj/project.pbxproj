@@ -36,10 +36,7 @@
 		8F6AC9312AA6826900F90966 /* Ignis.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 8F6AC92F2AA6826900F90966 /* Ignis.xcdatamodeld */; };
 		8FB8F2D32ABA6FB200509195 /* PythonKit in Frameworks */ = {isa = PBXBuildFile; productRef = 8FB8F2D22ABA6FB200509195 /* PythonKit */; };
 		8FB9A6562AA0057E004A610D /* Onboarding1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FB9A6552AA0057E004A610D /* Onboarding1.swift */; };
-		8FB9A6682AA00FD7004A610D /* Inter-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8FB9A6612AA00F5D004A610D /* Inter-Regular.ttf */; };
-		8FB9A6692AA011AF004A610D /* Inter-Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8FB9A65F2AA00F5D004A610D /* Inter-Thin.ttf */; };
 		8FB9A66B2AA02649004A610D /* Onboarding2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FB9A66A2AA02649004A610D /* Onboarding2.swift */; };
-		8FC2B2362AC8A87200D80CD6 /* package.json in Resources */ = {isa = PBXBuildFile; fileRef = 8FC2B2352AC8A87100D80CD6 /* package.json */; };
 		8FC2B2382AC8A89300D80CD6 /* package-lock.json in Resources */ = {isa = PBXBuildFile; fileRef = 8FC2B2372AC8A89100D80CD6 /* package-lock.json */; };
 		8FC2B23A2AC8A89900D80CD6 /* firebase.json in Resources */ = {isa = PBXBuildFile; fileRef = 8FC2B2392AC8A89800D80CD6 /* firebase.json */; };
 		8FE030162AF1682800987806 /* PredictionAlgorithm .swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FE030152AF1682800987806 /* PredictionAlgorithm .swift */; };
@@ -82,27 +79,13 @@
 		8F3D0CDE2AB5F9C700AE2AB0 /* Placeholder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Placeholder.swift; sourceTree = "<group>"; };
 		8F3D0CE12AB6231100AE2AB0 /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
 		8F3D0CE32AB624E000AE2AB0 /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
-		8F3D7B2B2AC2190E006601D7 /* Script.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = Script.sh; sourceTree = "<group>"; };
 		8F54A96B2AA211CB0071A96B /* Onboarding3.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Onboarding3.swift; sourceTree = "<group>"; };
 		8F6AC9252AA3835600F90966 /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
 		8F6AC9272AA3839400F90966 /* UserIDs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserIDs.swift; sourceTree = "<group>"; };
 		8F6AC9302AA6826900F90966 /* Ignis.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Ignis.xcdatamodel; sourceTree = "<group>"; };
 		8FB9A6552AA0057E004A610D /* Onboarding1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Onboarding1.swift; sourceTree = "<group>"; };
-		8FB9A65B2AA00F5D004A610D /* Inter-VariableFont_slnt,wght.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Inter-VariableFont_slnt,wght.ttf"; sourceTree = "<group>"; };
-		8FB9A65D2AA00F5D004A610D /* Inter-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Inter-Medium.ttf"; sourceTree = "<group>"; };
-		8FB9A65E2AA00F5D004A610D /* Inter-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Inter-Light.ttf"; sourceTree = "<group>"; };
-		8FB9A65F2AA00F5D004A610D /* Inter-Thin.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Inter-Thin.ttf"; path = "Erra/Inter/static/Inter-Thin.ttf"; sourceTree = SOURCE_ROOT; };
-		8FB9A6602AA00F5D004A610D /* Inter-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Inter-Bold.ttf"; sourceTree = "<group>"; };
-		8FB9A6612AA00F5D004A610D /* Inter-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Inter-Regular.ttf"; path = "Erra/Inter/static/Inter-Regular.ttf"; sourceTree = SOURCE_ROOT; };
-		8FB9A6622AA00F5D004A610D /* Inter-ExtraBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Inter-ExtraBold.ttf"; sourceTree = "<group>"; };
-		8FB9A6632AA00F5D004A610D /* Inter-ExtraLight.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Inter-ExtraLight.ttf"; sourceTree = "<group>"; };
-		8FB9A6642AA00F5D004A610D /* Inter-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Inter-Black.ttf"; sourceTree = "<group>"; };
-		8FB9A6652AA00F5D004A610D /* Inter-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Inter-SemiBold.ttf"; sourceTree = "<group>"; };
-		8FB9A6662AA00F5D004A610D /* OFL.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = OFL.txt; sourceTree = "<group>"; };
-		8FB9A6672AA00F5D004A610D /* README.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = README.txt; sourceTree = "<group>"; };
 		8FB9A66A2AA02649004A610D /* Onboarding2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Onboarding2.swift; sourceTree = "<group>"; };
 		8FC2B2332AC8A84900D80CD6 /* functions */ = {isa = PBXFileReference; lastKnownFileType = folder; path = functions; sourceTree = "<group>"; };
-		8FC2B2352AC8A87100D80CD6 /* package.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = package.json; sourceTree = "<group>"; };
 		8FC2B2372AC8A89100D80CD6 /* package-lock.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "package-lock.json"; sourceTree = "<group>"; };
 		8FC2B2392AC8A89800D80CD6 /* firebase.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = firebase.json; sourceTree = "<group>"; };
 		8FE030152AF1682800987806 /* PredictionAlgorithm .swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PredictionAlgorithm .swift"; sourceTree = "<group>"; };
@@ -150,9 +133,7 @@
 			children = (
 				8FC2B2372AC8A89100D80CD6 /* package-lock.json */,
 				8FC2B2392AC8A89800D80CD6 /* firebase.json */,
-				8FC2B2352AC8A87100D80CD6 /* package.json */,
 				8FC2B2332AC8A84900D80CD6 /* functions */,
-				8F3D7B2B2AC2190E006601D7 /* Script.sh */,
 				6D0C6F502A58810D004846AA /* Erra */,
 				6D0C6F4F2A58810D004846AA /* Products */,
 			);
@@ -171,7 +152,6 @@
 		6D0C6F502A58810D004846AA /* Erra */ = {
 			isa = PBXGroup;
 			children = (
-				8FB9A65A2AA00F5D004A610D /* Inter */,
 				6D0EA01C2A5B2F7700933D09 /* Erra.entitlements */,
 				6D0EA0142A5AC85500933D09 /* Info.plist */,
 				6D0C6F8A2A5AC3A7004846AA /* GoogleService-Info.plist */,
@@ -229,33 +209,6 @@
 				8FE030152AF1682800987806 /* PredictionAlgorithm .swift */,
 			);
 			path = "Components ";
-			sourceTree = "<group>";
-		};
-		8FB9A65A2AA00F5D004A610D /* Inter */ = {
-			isa = PBXGroup;
-			children = (
-				8FB9A65B2AA00F5D004A610D /* Inter-VariableFont_slnt,wght.ttf */,
-				8FB9A65C2AA00F5D004A610D /* static */,
-				8FB9A6662AA00F5D004A610D /* OFL.txt */,
-				8FB9A6672AA00F5D004A610D /* README.txt */,
-			);
-			path = Inter;
-			sourceTree = "<group>";
-		};
-		8FB9A65C2AA00F5D004A610D /* static */ = {
-			isa = PBXGroup;
-			children = (
-				8FB9A65D2AA00F5D004A610D /* Inter-Medium.ttf */,
-				8FB9A65E2AA00F5D004A610D /* Inter-Light.ttf */,
-				8FB9A65F2AA00F5D004A610D /* Inter-Thin.ttf */,
-				8FB9A6602AA00F5D004A610D /* Inter-Bold.ttf */,
-				8FB9A6612AA00F5D004A610D /* Inter-Regular.ttf */,
-				8FB9A6622AA00F5D004A610D /* Inter-ExtraBold.ttf */,
-				8FB9A6632AA00F5D004A610D /* Inter-ExtraLight.ttf */,
-				8FB9A6642AA00F5D004A610D /* Inter-Black.ttf */,
-				8FB9A6652AA00F5D004A610D /* Inter-SemiBold.ttf */,
-			);
-			path = static;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -382,9 +335,6 @@
 				6D0C6F592A58810E004846AA /* Preview Assets.xcassets in Resources */,
 				6D0C6F562A58810E004846AA /* Assets.xcassets in Resources */,
 				8FC2B2382AC8A89300D80CD6 /* package-lock.json in Resources */,
-				8FB9A6682AA00FD7004A610D /* Inter-Regular.ttf in Resources */,
-				8FB9A6692AA011AF004A610D /* Inter-Thin.ttf in Resources */,
-				8FC2B2362AC8A87200D80CD6 /* package.json in Resources */,
 				6D0C6F8B2A5AC3A7004846AA /* GoogleService-Info.plist in Resources */,
 				8FC2B23A2AC8A89900D80CD6 /* firebase.json in Resources */,
 			);
